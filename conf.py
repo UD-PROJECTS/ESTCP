@@ -49,7 +49,7 @@ html_theme = 'logilab'
 
 html_theme_options = {
         'logo':'../../../images/Delaware.svg',
-        'logo_url':'https://fengyanshi.github.io/ESTCP/build/html/index.html'
+        'logo_url':'https://ud-projects.github.io/ESTCP/_build/html/index.html'
         }
 
 # Add any paths that contain custom static files (such as style sheets) here,

@@ -9,9 +9,9 @@ ESTCP PROJECT
 Objective
 ****************************************
  
-.. figure:: images/eta_googlemap_zm.png
-   :width: 600px
-   :height: 413px
+.. figure:: images/funwave_norfolk.png
+   :width: 650px
+   :height: 513px
    :align: right
    :target: app_norfork.html
 
