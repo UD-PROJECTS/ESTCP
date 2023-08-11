@@ -1,7 +1,7 @@
-.. _section-basics:
 
-**MODELS**
-==========
+
+**BASIC MODEL INFORMATION**
+============================
 
 .. toctree::
    :maxdepth: 2

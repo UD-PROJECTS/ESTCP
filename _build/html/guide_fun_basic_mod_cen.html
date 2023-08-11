@@ -1,0 +1,521 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Centre Module &#8212; ESTCP  documentation</title>
+    <link rel="stylesheet" href="_static/lglb-sphinx-doc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="FUNWAVE-TVD SETUP" href="guide_fun_setup.html" />
+    <link rel="prev" title="Modules" href="guide_fun_basic_mod.html" /> 
+  </head><body>
+<div class="header">
+ <p class="logo"><a href="https://ud-projects.github.io/ESTCP/_build/html/index.html">
+  <img class="logo" src="_static/../../../images/Delaware.svg" alt="Logo"/>
+ </a></p>
+</div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="guide_fun_setup.html" title="FUNWAVE-TVD SETUP"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="guide_fun_basic_mod.html" title="Modules"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">ESTCP  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="guide.html" ><strong>USER GUIDE</strong></a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="guide_funwave.html" >FUNWAVE USERS GUIDE</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="guide_fun_basic.html" >FUNWAVE-TVD BASICS</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="guide_fun_basic_mod.html" accesskey="U">Modules</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Centre Module</a><ul>
+<li><a class="reference internal" href="#boundary-conditions">Boundary Conditions</a></li>
+<li><a class="reference internal" href="#wave-breaking-roller-and-undertow">Wave Breaking, roller and undertow</a><ul>
+<li><a class="reference internal" href="#breaking-schemes">Breaking schemes</a></li>
+<li><a class="reference internal" href="#roller-and-undertow">Roller and undertow</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#sponge-layer">Sponge Layer</a></li>
+<li><a class="reference internal" href="#wave-maker">Wave–maker</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#tide-and-surge-module">Tide and Surge Module</a></li>
+<li><a class="reference internal" href="#sediment-transport-module">Sediment Transport Module</a><ul>
+<li><a class="reference internal" href="#suspended-sediment-transport-equation-non-cohesive">Suspended Sediment Transport Equation (Non-cohesive)</a></li>
+<li><a class="reference internal" href="#suspended-sediment-transport-equation-cohesive">Suspended Sediment Transport Equation (Cohesive)</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="guide_fun_basic_mod.html"
+                        title="previous chapter">Modules</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="guide_fun_setup.html"
+                        title="next chapter">FUNWAVE-TVD SETUP</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/guide_fun_basic_mod_cen.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="centre-module">
+<h1>Centre Module<a class="headerlink" href="#centre-module" title="Permalink to this headline">¶</a></h1>
+<p>The central module solves the Boussinesq equations and also takes care basic functions such as wavemaker, wave breaking, spongelayers, boundary conditions and model input and output.</p>
+<div class="section" id="boundary-conditions">
+<h2>Boundary Conditions<a class="headerlink" href="#boundary-conditions" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><dl class="simple">
+<dt><strong>Wall boundary condition</strong></dt><dd><p>A mirror boundary condition is used for a fully reflective wall.</p>
+</dd>
+<dt><strong>Periodic boundary condition</strong></dt><dd><p>The periodic boundary condition in <em>y</em> (south/north) direction was implemented in the code.</p>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="section" id="wave-breaking-roller-and-undertow">
+<h2>Wave Breaking, roller and undertow<a class="headerlink" href="#wave-breaking-roller-and-undertow" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="breaking-schemes">
+<h3>Breaking schemes<a class="headerlink" href="#breaking-schemes" title="Permalink to this headline">¶</a></h3>
+<p>There are two breaking algorithms implemented in the model. One takes advantage of the shock–capturing scheme in TVD.
+It  follows the approach of <a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S0378383909000027">Tonelli and Petti (2009)</a>,  who successfully used the ability of the nonlinear shallow water equation (NSWE) with a TVD scheme to model moving hydraulic jumps. Thus, the fully nonlinear Boussinesq equations are switched  to NSWE at cells where the Froude number exceeds  a certain threshold. Following Tonelli and Petti, the ratio of wave height to total water depth is chosen as  the criterion to switch from Boussinesq to NSWE, with a threshold value  set to 0.8,  as suggested by Tonelli and Petti.</p>
+<p>The other wave breaking scheme is the original eddy–viscosity scheme used in the previous version of FUNWAVE (<a class="reference external" href="https://pdfs.semanticscholar.org/e5fc/6de940e793517a2835cd8a11743f36fc2cfe.pdf">Kennedy et al., 2000</a>. To fit the eddy–viscosity method in the TVD scheme, the artificial eddy viscosity terms are:</p>
+<div class="math notranslate nohighlight">
+\[{\bf R}_{bx} = \frac{\partial }{\partial x} (\nu \frac{\partial P}{\partial x}) + \frac{\partial }{\partial y} (\nu \frac{\partial P}{\partial y} )\]</div>
+<div class="math notranslate nohighlight">
+\[{\bf R}_{by} = \frac{\partial }{\partial y} (\nu \frac{\partial Q}{\partial y}) + \frac{\partial }{\partial x} (\nu \frac{\partial Q}{\partial x})\]</div>
+<p>Note that the form is slightly different from that in Kennedy et al. (2000). The present form was found to give a more stable numerical solution with the cross–derivatives removed. In the present form, <span class="math notranslate nohighlight">\(\nu\)</span> is the artificial eddy viscosity defined by:</p>
+<div class="math notranslate nohighlight">
+\[\nu = B \delta_b^2 (h+\eta) \eta_t\]</div>
+<p>where <span class="math notranslate nohighlight">\(\delta_b = 1.2\)</span>. In Kennedy et al. (2000), <span class="math notranslate nohighlight">\(B\)</span> varies smoothly from 0 to 1 so as to avoid an impulsive start of breaking and the resulting instability. In the present TVD model, because there is no instability problem found, we adopt a constant value <span class="math notranslate nohighlight">\(B=1\)</span> as breaking is initiated:</p>
+<div class="math notranslate nohighlight">
+\[B =  1 \ \ \  \eta_t \ge  \eta_t^*\]</div>
+<div class="math notranslate nohighlight">
+\[B =  0 \ \ \  \eta_t &lt;  \eta_t^*\]</div>
+<p>The parameter <span class="math notranslate nohighlight">\(\eta_t^*\)</span> determines the onset and cessation of breaking. Following Kennedy et al., a breaking event begins when <span class="math notranslate nohighlight">\(\eta_t\)</span> exceeds some initial threshold value <span class="math notranslate nohighlight">\(\eta_t^{(I)}\)</span>, as breaking develops, the wave will continue to break until <span class="math notranslate nohighlight">\(\eta_t\)</span> drops below <span class="math notranslate nohighlight">\(\eta_t^{(F)}\)</span>. However, we do not use the smooth transition as in Kennedy et al. because the present TVD scheme did not encounter any instability problem associated with breaking. The values of <span class="math notranslate nohighlight">\(\eta_t^{(I)}\)</span> and <span class="math notranslate nohighlight">\(\eta_t^{(F)}\)</span> can be described by  <span class="math notranslate nohighlight">\(C_{brk1}  \sqrt{gh}\)</span> and  <span class="math notranslate nohighlight">\(C_{brk2} \sqrt{gh}\)</span>, respectively, where <span class="math notranslate nohighlight">\(C_{brk1}\)</span> and  <span class="math notranslate nohighlight">\(C_{brk2}\)</span> are empirical parameters. In Kennedy et al., <span class="math notranslate nohighlight">\(C_{brk1} = 0.65\)</span> and  <span class="math notranslate nohighlight">\(C_{brk2}=0.15\)</span>. <a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S1463500318301793?via%3Dihub">Choi et al. (2018)</a> showed that <span class="math notranslate nohighlight">\(C_{brk1}\)</span> should be smaller and <span class="math notranslate nohighlight">\(C_{brk2}\)</span> be larger than those in Kennedy et al. to match the laboratory experimental data. For the benchmark test of <a class="reference external" href="https://ascelibrary.org/doi/abs/10.1061/(ASCE)0733-950X(1989)115:2(269)">Vincent and Briggs (1989)</a> for instance, <span class="math notranslate nohighlight">\(C_{brk1} = 0.45\)</span> and <span class="math notranslate nohighlight">\(C_{brk2} = 0.35\)</span> were adopted.</p>
+</div>
+<div class="section" id="roller-and-undertow">
+<h3>Roller and undertow<a class="headerlink" href="#roller-and-undertow" title="Permalink to this headline">¶</a></h3>
+<div class="align-left figure">
+<a class="reference internal image-reference" href="_images/roller.jpg"><img alt="alternate text" src="_images/roller.jpg" style="width: 500px; height: 250px;" /></a>
+</div>
+<p><em>Figure 1. Concept of roller (from Schäffer et al., 1993). Cross-section and assumed velocity profile of a breaking wave with a surface roller.</em></p>
+<p><strong>Roller-induced flux</strong></p>
+<p>The general expression of a breaking roller in a Boussinesq-type model was introduced by several authors such as Madsen (1981), <a class="reference external" href="https://www.sciencedirect.com/science/article/pii/0378383984900280">Svendsen (1984)</a>, and <a class="reference external" href="https://www.sciencedirect.com/science/article/pii/037838399390001O">Schäffer et al. (1993)</a>. For a one-dimensional case, the roller induced mass flux can be expressed by:</p>
+<div class="math notranslate nohighlight">
+\[P=u_0d + (c-u_0) \delta,  \ \ \ \ when \ \ breaking\]</div>
+<div class="math notranslate nohighlight">
+\[P=u_0d, \ \ \ \ \ \ \ \ \ \ else\]</div>
+<p>where <span class="math notranslate nohighlight">\(P\)</span> is the total mass flux including the contribution of roller. <span class="math notranslate nohighlight">\(u_0\)</span> is the velocity defined in the figure, <span class="math notranslate nohighlight">\(c\)</span> is the wave celerity, and <span class="math notranslate nohighlight">\(\delta\)</span> is the roller thickness. In FUNWAVE-TVD, we use <span class="math notranslate nohighlight">\(u_\alpha\)</span> to represent the velocity <span class="math notranslate nohighlight">\(u_0\)</span>. <span class="math notranslate nohighlight">\(c\)</span> is calculated using:</p>
+<div class="math notranslate nohighlight">
+\[c = \sqrt{gd}\]</div>
+<p>which is different from Schäffer et al. (1993) who used the local still water depth: <span class="math notranslate nohighlight">\(c=1.3\sqrt{gh}\)</span>.</p>
+<p>The thickness of roller <span class="math notranslate nohighlight">\(\delta\)</span> can be estimated using the roller geometry shown in Figure 1. However, in the parallelized program, locating the roller region involves cross-core-boundary tracking, that is nontrivial and time-consuming. In FUNWAVE-TVD, we used a rough estimate of the roller thickness based on the correlation between the roller area and the wave height proposed by Svendsen (1984), i.e. :</p>
+<div class="math notranslate nohighlight" id="equation-svendsen">
+<span class="eqno">(1)<a class="headerlink" href="#equation-svendsen" title="Permalink to this equation">¶</a></span>\[A = 0.9 H^2\]</div>
+<p>where <span class="math notranslate nohighlight">\(A\)</span> represents the roller area and <span class="math notranslate nohighlight">\(H\)</span> is the wave height. Based on the roller geometry, the roller area can be estimated as:</p>
+<div class="math notranslate nohighlight" id="equation-geometry">
+<span class="eqno">(2)<a class="headerlink" href="#equation-geometry" title="Permalink to this equation">¶</a></span>\[A = \frac{LH}{2} r\]</div>
+<p>where <span class="math notranslate nohighlight">\(L\)</span> is the wave length, <span class="math notranslate nohighlight">\(r\)</span> is a ratio representing the thickness, and <span class="math notranslate nohighlight">\(\delta = rH\)</span>. Assuming the wave length can be estimated by <span class="math notranslate nohighlight">\(L = 4 H /\tan \theta\)</span>, where <span class="math notranslate nohighlight">\(\tan \theta\)</span> is estimated by <span class="math notranslate nohighlight">\(\tan \theta = \eta_t/c\)</span>. According to <a class="reference internal" href="#equation-svendsen">(1)</a> and <a class="reference internal" href="#equation-geometry">(2)</a>, the ratio <span class="math notranslate nohighlight">\(r\)</span> can be calculated by:</p>
+<div class="math notranslate nohighlight">
+\[r = 0.45 \tan \theta\]</div>
+<p>The ratio <span class="math notranslate nohighlight">\(r\)</span> is limited by the maximum breaking angle (<span class="math notranslate nohighlight">\(20^{\circ}\)</span>, Schaffer et al. 1993), resulting in the maxumim value of <span class="math notranslate nohighlight">\(r = 0.1638\)</span>.</p>
+<p>We further assume the local thickness of the roller at the breaking point is <span class="math notranslate nohighlight">\(\delta = r (\eta^*-\bar{\eta})\)</span>, where <span class="math notranslate nohighlight">\(\eta^{*}\)</span> and <span class="math notranslate nohighlight">\(\bar{\eta}\)</span> are the surface elevation at a breaking point and the mean surface elevation, respectively.  The final formula for the roller-induced mass flux can be expressed as:</p>
+<div class="math notranslate nohighlight" id="equation-flux">
+<span class="eqno">(3)<a class="headerlink" href="#equation-flux" title="Permalink to this equation">¶</a></span>\[P=u_0d + 0.45 (c-u_0) \tan \theta (\eta^{*}-\bar{\eta}),  \mbox{ at  breaking  point}\]</div>
+<p>The mean surface elevation is calculated using the time series of surface elevation before the roller estimation.</p>
+<p><strong>Roller effect on hydrodynamics</strong></p>
+<p>Following Schaffer et al. (1993), the total momentum flux, including the roller contribution, can be expressed as:</p>
+<div class="math notranslate nohighlight" id="equation-momentum">
+<span class="eqno">(4)<a class="headerlink" href="#equation-momentum" title="Permalink to this equation">¶</a></span>\[M = \int^\eta_{-h} u^2 dz = u_0^2 d +(c^2-u^2_0) \delta\]</div>
+<p>The excess momentum effect due to the non-uniform velocity distribution can be calculated using <a class="reference internal" href="#equation-flux">(3)</a> and <a class="reference internal" href="#equation-momentum">(4)</a>:</p>
+<div class="math notranslate nohighlight">
+\[R = M-P^2/d\]</div>
+<p>or</p>
+<div class="math notranslate nohighlight">
+\[R = (c-u_0)^2 \delta (1-\frac{\delta}{d})\]</div>
+<p>The roller effect on hydrodynamics can be calculated by adding extra terms, <span class="math notranslate nohighlight">\(R_x\)</span> and <span class="math notranslate nohighlight">\(R_y\)</span>, in the momentum equations in the x and y directions, respectively.</p>
+<p>The calculation of the undertow uses the local balance of the roller induced momentum flux and the undertow flux. The roller/undertow effect is taken into account in the sediment transport processes.</p>
+<p><em>References</em></p>
+<p>Choi, Y.-K., Shi, F., Malej, M., and Smith, J. M., 2018, “Performance of various shock-capturing-type reconstruction schemes in the Boussinesq wave model, FUNWAVE-TVD”, Ocean Modelling, 131, 86-100. <a class="reference external" href="https://doi.org/10.1016/j.ocemod.2018.09.004">DOI:10.1016/j.ocemod.2018.09.004</a>.</p>
+<p>Kennedy, A.B., Chen, Q., Kirby, J.T., Dalrymple, R.A., 2000. “Boussinesq modeling of wave transformation, breaking and runup. I: 1D”. J. Waterway Port Coastal Ocean Eng. 126(1), 39–47.</p>
+<p>Madsen, P.A. 1981. “A model for a turbulent bore”. Series paper 28, Inst. Hydrodyn. and Hydraul. Engng, Tech. Univ. Denmark.</p>
+<p>Schäffer H. A., Madsen, P.A., Deigaard, R., 1993, A Boussinesq model for waves breaking in shallow water, Coastal Engineering, <a class="reference external" href="https://doi.org/10.1016/0378-3839(93)90001-O">DOI:10.1016/0378-3839(93)90001-0</a></p>
+<p>Svendsen, LA., Wave Heights and Set-Up in a Surf Zone, 1984, Coastal Engineering, Vol. 8. <a class="reference external" href="https://doi.org/10.1016/0378-3839(84)90028-0">DOI:10.1016/0378-3839(84)90028-0</a></p>
+<p>Tonelli, M., and M. Petti, 2009. “Hybrid finite volume – finite difference scheme for 2DH improved Boussinesq equations”. Coastal Engineering, 56(5-6), 609-620. <a class="reference external" href="https://doi.org/10.1016/j.coastaleng.2009.01.001">DOI:10.1016.j.coastaleng.2009.01.001</a></p>
+<p>Vincent, C.L., Briggs, M.J., 1989. “Refraction-diffraction of irregular waves over a mound”. J. Waterway Port Coastal Ocean Eng. 115 (2), 269–284. <a class="reference external" href="https://doi.org/10.1061/(ASCE)0733-950X(1989)115:2(269)">DOI:10.1061/(ASCE)0733-950X(1989)115:2(269)</a></p>
+</div>
+</div>
+<div class="section" id="sponge-layer">
+<h2>Sponge Layer<a class="headerlink" href="#sponge-layer" title="Permalink to this headline">¶</a></h2>
+<p>The sponge layer technique introduced by <a class="reference external" href="https://www.sciencedirect.com/science/article/pii/0378383983900224">Larsen and Dancy (L–D type, 1983)</a> is implemented in the code. In this method, the variables <span class="math notranslate nohighlight">\(\phi\)</span> (i.e., <span class="math notranslate nohighlight">\(\eta, u, v\)</span>) are directly attenuated at every time step:</p>
+<div class="math notranslate nohighlight">
+\[\phi = \phi /C_s\]</div>
+<p>where <span class="math notranslate nohighlight">\(C_s\)</span> is a damping coefficient function defined by:</p>
+<div class="math notranslate nohighlight">
+\[C_s = \alpha_s^{\gamma_x^{i-1}}, \ \ \ \ \ i=1,2, ..., n\]</div>
+<p>in which <span class="math notranslate nohighlight">\(\alpha_s\)</span> and <span class="math notranslate nohighlight">\(\gamma_s\)</span> are two free parameters. <span class="math notranslate nohighlight">\(i\)</span> represents grid numbers. <a class="reference external" href="https://ascelibrary.org/doi/abs/10.1061/(ASCE)0733-950X(1999)125:4(176)">Chen et al. (1999)</a> suggested that <span class="math notranslate nohighlight">\(\alpha_s =2\)</span>, <span class="math notranslate nohighlight">\(\gamma_s = 0.88 - 0.92\)</span>, and <span class="math notranslate nohighlight">\(n=50 - 100\)</span>. <strong>The length of the sponge layer is usually taken to be one or two times the typical wavelength.</strong> Chen et al. also pointed out that the damping coefficients for optimal absorption are somewhat case–sensitive.</p>
+<p>Recently, some problem was found in application of L–D type sponge layer for long–term simulations. The direct damping method combined with the TVD scheme generates sawtooth noises with a <span class="math notranslate nohighlight">\(2 dx\)</span> wave length. The sawtooth noises are usually not noticeable due to small magnitudes. However, they grow gradually with time and may become significant in a long term simulation. If this problem occurs, we suggest using the following friction–type or viscous–type sponge layers. Using the combination of L–D and friction/viscous sponge layers may remove the sawtooth noises and also make the wave damping more efficient.</p>
+<p>Friction type and Diffusion type</p>
+<p>The friction–type and viscous type sponge layers directly use the friction terms and diffusion terms existing in the model. The source term for the friction–type sponge can be described as:</p>
+<div class="math notranslate nohighlight">
+\[F_{frc} = - C_{sponge} |{\bf u_\alpha}|  (u_\alpha, v_\alpha) h\]</div>
+<p>Note that depth <span class="math notranslate nohighlight">\(h\)</span> is added in the formula above to make the source term depth–independent in terms of the flux–type momentum equations. For the diffusion–type sponge, the description of diffusion term follows exactly the eddy–viscosity breaking formulation with spatial varying viscosity coefficients <span class="math notranslate nohighlight">\(\nu_{sponge}\)</span>.  Both coefficients are smoothly ramped in space at the sponge layer boundaries. For example, for a sponge layer on the left end of the domain, <span class="math notranslate nohighlight">\(C_{sponge}\)</span> can be written as:</p>
+<div class="math notranslate nohighlight">
+\[C_{sponge} = C_{max} \left (1-  \mbox{tanh} \frac{10 (i-1)}{I_{\mbox{width}}-1} \right)\]</div>
+<p>where <span class="math notranslate nohighlight">\(C_{max}\)</span> is the maximum value of <span class="math notranslate nohighlight">\(C_{sponge}\)</span> used in the sponger layer. <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(I_{\mbox{width}}\)</span> represent the point number and the layer width in points, respectively. Similar expressions can be obtained for sponge layers on three other ends of the domain as well as the viscous sponge layer.</p>
+<p>The width of the sponge layer is usually taken to be two or three wave lengths for the friction–type and viscous sponge layers. Narrow sponge layers can be used for L–D type sponge layer with a good efficiency but sawtooth noise generated by the method is a concern for long–term simulation.</p>
+<p><em>References</em></p>
+<p>Chen, Q., Madsen, P.A., Basco, D.R., 1999. “Current Effects on Nonlinear Interactions of Shallow–Water Waves”. J. of Waterway, Port, Coastal, and Ocean Eng. 125 (4).</p>
+<p>Larsen, J. and Dancy, H., 1983. “Open boundaries in short wave simulations – A new approach”. Coastal Eng. 7 (3), 285-297.</p>
+</div>
+<div class="section" id="wave-maker">
+<h2>Wave–maker<a class="headerlink" href="#wave-maker" title="Permalink to this headline">¶</a></h2>
+<p>There are two primary types of numerical wave–makers: Internal and Boundary. In this section, we will discuss internal wave–maker theory.</p>
+<p><strong>Internal wave–maker theory</strong></p>
+<p>The internal wavemaker was implemented based on <a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S0378383999000095">Wei et al. (1999)</a> two–way internal wavemaker and <a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S0141118700000055">Chawla and Kirby (2000)</a> one–way internal wavemaker (under development). Here, we briefly summarize the formulations used in the wavemakers. Detailed theory can be found in Wei and Kirby (1999) and Chawla and Kirby (2000).</p>
+<p>Wei and Kirby (1999) followed the approach of <a class="reference external" href="https://www.sciencedirect.com/science/article/pii/0378383983900224">Larsen and Dancy (1983)</a> who used an ad–hoc source mechanism where water mass is added and subtracted along a straight source/sink line inside the computing domain. This approach works well in a staggered–grid differencing scheme, where water is essentially being added to or drained from a single grid block. In applying this technique to the Boussinesq model on an unstaggered grid, however, Wei and Kirby found that use of a single source line accused high frequency noise, leading to blowup of the model. They then used a partially distributed mass source <span class="math notranslate nohighlight">\(f(x,y,t)\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[f(x,y,t) = g(x) s(y,t)\]</div>
+<p>where <span class="math notranslate nohighlight">\(g(x)\)</span> is a Gaussian shape function and <span class="math notranslate nohighlight">\(s(y,t)\)</span> the input time series of the magnitude of source function with an assumption that the center of the source region is parallel to the y–axis. The functions <span class="math notranslate nohighlight">\(g(x)\)</span> and <span class="math notranslate nohighlight">\(s(y,t)\)</span> are defined as:</p>
+<div class="math notranslate nohighlight">
+\[g(x) = \mbox{exp}[-\beta(x-x_s)^2]\]</div>
+<div class="math notranslate nohighlight">
+\[s(y,t) = D \mbox{sin} (\lambda y -\omega t)\]</div>
+<p>where <span class="math notranslate nohighlight">\(\beta\)</span> is the shape coefficient for the source function, and <span class="math notranslate nohighlight">\(x_s\)</span> is the central location of the source in the <span class="math notranslate nohighlight">\(x\)</span> direction, for a source oriented parallel to the <span class="math notranslate nohighlight">\(y\)</span> axis, as shown in the figure below. <span class="math notranslate nohighlight">\(D\)</span> is the magnitude of the source function, <span class="math notranslate nohighlight">\(\lambda = k \mbox{sin} (\theta)\)</span> the wavenumber in the <span class="math notranslate nohighlight">\(y\)</span> direction, and <span class="math notranslate nohighlight">\(k\)</span> is the linear wavenumber.</p>
+<p>For a monochromatic wave or a single wave component of a random wave train, the magnitude <span class="math notranslate nohighlight">\(D\)</span> of source function can be determined by:</p>
+<div class="math notranslate nohighlight">
+\[D = \frac{2 a_0 \cos (\theta) (\omega^2 - \alpha_1 g k^4 h^3) }{\omega k I [1-\alpha(kh)^2]}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\alpha = -0.390, \alpha_1 = \alpha + 1/3\)</span>, and <span class="math notranslate nohighlight">\(I\)</span> is the integral given by:</p>
+<div class="math notranslate nohighlight">
+\[I = \int^\infty_{-\infty} \exp (-\beta x^2) \exp (-ilx) dx = \sqrt{\frac{\pi}{\beta}} \exp(- l^2/4\beta)\]</div>
+<p>where <span class="math notranslate nohighlight">\(l=k\cos (\theta)\)</span> is the wavenumber in the <span class="math notranslate nohighlight">\(x\)</span> direction. In theory, the shape coefficient <span class="math notranslate nohighlight">\(\beta\)</span> can be any number. The larger the value of <span class="math notranslate nohighlight">\(\beta\)</span> is, the narrower the source function becomes. The definition of the source function width <span class="math notranslate nohighlight">\(W\)</span> is not unique, and here we define <span class="math notranslate nohighlight">\(W\)</span> to be the distance between two coordinates <span class="math notranslate nohighlight">\(x_1\)</span> and <span class="math notranslate nohighlight">\(x_2\)</span> where the corresponding source function heights are equal to <span class="math notranslate nohighlight">\(\exp (-5) = 0.0067\)</span> times the maximum height <span class="math notranslate nohighlight">\(D\)</span>. Then <span class="math notranslate nohighlight">\(x_1\)</span> and <span class="math notranslate nohighlight">\(x_2\)</span> must satisfy the quadratic equation:</p>
+<div class="math notranslate nohighlight">
+\[\beta (x-x_s)^2 = 5\]</div>
+<p>from which the width of source function is given by:</p>
+<div class="math notranslate nohighlight">
+\[W = |x_2 - x_1| = 2\sqrt{\frac{5}{\beta}}\]</div>
+<p>In the previous version of FUNWAVE (<a class="reference external" href="http://resolver.tudelft.nl/uuid:d79bba08-8d35-47e2-b901-881c86985ce4">Kirby et al., 1998</a>), it is suggested that <span class="math notranslate nohighlight">\(W\)</span> equals about half of the wavelength for monochromatic wave. If <span class="math notranslate nohighlight">\(L\)</span> is the wavelength, the requirement of <span class="math notranslate nohighlight">\(W=\delta L/2\)</span> (where <span class="math notranslate nohighlight">\(\delta\)</span> is of order 1) results in:</p>
+<div class="math notranslate nohighlight">
+\[\beta = \frac{5}{(\delta L/4)^2} = \frac{80}{\delta^2 L^2}\]</div>
+<p>For random waves, the value of <span class="math notranslate nohighlight">\(\beta\)</span> is determined according to the peak frequency component and then used for all components in the wave train. FUNWAVE–TVD follows the criteria for determining <span class="math notranslate nohighlight">\(\beta\)</span>, though a narrow <span class="math notranslate nohighlight">\(W\)</span> does not seem to cause any problem.</p>
+<div class="align-center figure">
+<a class="reference internal image-reference" href="_images/wavemaker.jpg"><img alt="alternate text" src="_images/wavemaker.jpg" style="width: 300px; height: 250px;" /></a>
+</div>
+<p>For the irregular wavemaker, an extension was made to incorporate an  alongshore periodicity into wave generation,  in order to eliminate a boundary effect on wave simulations. The technique exactly follows the strategy in <a class="reference external" href="https://agupubs.onlinelibrary.wiley.com/doi/pdf/10.1029/2002JC001308">Chen et al. (2003)</a>, who adjusted the distribution of wave directions in each frequency bin to obtain alongshore periodicity. This approach is effective in modeling of  breaking wave–induced nearshore circulation such as alongshore currents and rip currents.</p>
+<p>Regular wave generation</p>
+<p>The generation of monochromatic wave using the internal wavemaker is straightforward. Following the formulations given in 3.7.1, the magnitude of source function <span class="math notranslate nohighlight">\(D\)</span> is calculated by Equation 13 shown above for given wave amplitude <span class="math notranslate nohighlight">\(a_0\)</span>, wave angle <span class="math notranslate nohighlight">\(\theta\)</span>, water depth <span class="math notranslate nohighlight">\(h\)</span> and wave period <span class="math notranslate nohighlight">\(T=1/2\pi\omega\)</span>. The source function can be obtained using the Source function above.</p>
+<p>Irregular wave generation</p>
+<ul class="simple">
+<li><p>Using directional spectral data</p></li>
+</ul>
+<p>Irregular waves can be generated by integrating wave components split by frequency and direction and with random phases. Each wave component contains wave amplitude <span class="math notranslate nohighlight">\(a_0\)</span> converted from wave energy, wave angle <span class="math notranslate nohighlight">\(\theta\)</span> and wave period <span class="math notranslate nohighlight">\(T\)</span>. <em>The source function for each component can be obtained using the source function.</em></p>
+<ul class="simple">
+<li><p>Using analytical spectrum function</p></li>
+</ul>
+<p>The input for the wavemaker can be wave bulk parameters or directional spectral data. TMA shallow–water spectrum, JONSWAP spectrum and a wrapped–normal directional–spreading function are used to simulate a directional sea state. The combined spectrum function can be expressed as:</p>
+<div class="math notranslate nohighlight">
+\[S(f,h,\theta) = E(f,h) G(\theta)\]</div>
+<p><span class="math notranslate nohighlight">\(E\)</span> is the energy density distribution as follows:</p>
+<div class="math notranslate nohighlight">
+\[E (f,h) = \alpha g^2 f^{-5} (2 \pi)^{-4} \Phi (2\pi f, h) e^{-5/4(f/f_p)^{-4}} \gamma^{e^{[-(f/f_p -1)^2 /2\sigma^2]}}\]</div>
+<p>in which <span class="math notranslate nohighlight">\(f_p\)</span> is the peak frequency.  <span class="math notranslate nohighlight">\(\gamma\)</span> presents a frequency spreading parameter, and <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\sigma\)</span> are coefficients which may be found in <a class="reference external" href="https://agupubs.onlinelibrary.wiley.com/doi/pdf/10.1029/JC090iC01p00975">Bouws et al. (1985)</a> <span class="math notranslate nohighlight">\(\alpha\)</span> is obtained using the input <span class="math notranslate nohighlight">\(H_{mo}/H_{sig}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\sigma = 0.07  \ \ \ \  f \leq f_p\]</div>
+<div class="math notranslate nohighlight">
+\[\sigma = 0.09  \ \ \ \  f &gt; f_p\]</div>
+<p><span class="math notranslate nohighlight">\(\Phi\)</span> = 1.0 for the JONSWAP spectrum. For TMA, <span class="math notranslate nohighlight">\(\Phi\)</span> may be expressed as:</p>
+<div class="math notranslate nohighlight">
+\[\Phi (2 \pi f, h) =\frac{1}{2} \omega_h^2 \ \ \ \  \omega_h \leq 1\]</div>
+<div class="math notranslate nohighlight">
+\[\Phi (2 \pi f, h) = 1-\frac{1}{2}(2-\omega_h)^2 \ \ \ \ 2 &gt; \omega_h &gt;1\]</div>
+<div class="math notranslate nohighlight">
+\[\Phi (2 \pi f, h) = 1    \ \ \ \  \omega_h \geq 2\]</div>
+<p>where,</p>
+<div class="math notranslate nohighlight">
+\[\omega_h = 2 \pi f (\frac{h}{g})^{1/2}\]</div>
+<p>Here, <span class="math notranslate nohighlight">\(G(\theta)\)</span> is the wrapped normal directional spreading function written as:</p>
+<div class="math notranslate nohighlight">
+\[G(\theta) = \frac{1}{2\pi} +\frac{1}{\pi} \sum^N_{n=1} e^{[-\frac{( \sigma_{\theta})^2}{2}]} \cos n\theta\]</div>
+<p>where <span class="math notranslate nohighlight">\(\sigma_{\theta}\)</span> denotes circular deviation of the wrapped normal
+spreading function. To avoid the computational underflow, <span class="math notranslate nohighlight">\(N = 20\)</span> in the model.</p>
+<p>In the spectral wavemaker, the directional spectrum is first divided into <span class="math notranslate nohighlight">\(1000\)</span> frequency components and then reconstructed into a user–specified number of components with the equal energy. The directional components are evenly split in each frequency. The source function technique (Wei, et al., 1999) is then used for each component and the final surface elevation function can be written as:</p>
+<div class="math notranslate nohighlight">
+\[\eta = \sum^M_{m=1} C_m \cos \omega _m t + \sum^M_{m=1} S_m \sin \omega _m t\]</div>
+<p>where,</p>
+<div class="math notranslate nohighlight">
+\[C_m  = \sum^k_{n=1} D_{mn} \cos (k_{mn}y + \varepsilon_{mn})\]</div>
+<div class="math notranslate nohighlight">
+\[S_m =  \sum^k_{n=1} D_{mn} \sin (k_{mn}y + \varepsilon_{mn})\]</div>
+<p>in which y–axis is oriented along the main axis of the wave maker. <span class="math notranslate nohighlight">\(D_{mn}, k _{mn}\)</span> and <span class="math notranslate nohighlight">\(\varepsilon_{mn}\)</span> are the amplitude, wave number in the y direction and phase of a component, respectively. The phase can be random.</p>
+<p>The model also provides an option for 1–D spectral wave generation (uni–directional).</p>
+<p><em>References</em></p>
+<p>Bouws, E., Günther, H., Rosenthal, W., Vincent, C.L., 1985. “Similarity of the Wind Wave Spectrum in Finite Depth Water: 1. Spectral Form”. J. of Geophysical Research, 90, NO. C1, 975-986. DOI: 10.1029/JC090iC01p00975.</p>
+<p>Chawla, A., and Kirby, J.T., 2000. “A source function method for generation of waves on currents in Boussinesq models”. App. Ocean Research, 22 (2), 75-83. DOI: 10.1016/S0141-1187(00)00005-5.</p>
+<p>Chen, Q., Kirby, J.T., Dalrymple, R.A., Shi, F., Thorton, E.B., 2003. “Boussinesq modeling of longshore currents”. J. of Geophysical Research, 108, NO. C11, 3362. DOI: 10.1029/2002JC001308</p>
+<p>Kirby, J.T., Wei, G., Chen, Q., Kennedy, A.B., Dalrymple, R.A., 1998. “Funwave 1.0: Fully Nonlinear Boussinesq Wave Model – Documentation and User’s Manual”. Hydraulic Eng. Reports: NO. CACR-98-06. University of Delaware.</p>
+<p>Salatin, R., Chen, Q., Bak, A. S., Shi, F., and Brandt, S. R., 2021, Effects of Wave Coherence on Longshore Variability of Nearshore Wave Processes, Journal of Geophysical Research - Ocean,  <a class="reference external" href="https://doi.org/10.1029/2021JC017641">DOI:1029/2021JC017641</a></p>
+<p>Wei, G., Kirby J.T., Sinha, A., 1999. “Generation of waves in Boussinesq models using a source function method”. Coastal Eng. 36 (4), 271-299. DOI: 10.1016/S0378-3839(99)00009-5</p>
+</div>
+</div>
+<div class="section" id="tide-and-surge-module">
+<h1>Tide and Surge Module<a class="headerlink" href="#tide-and-surge-module" title="Permalink to this headline">¶</a></h1>
+<p>There are two types of boundary conditions developed to incorporate tidal level and/or tidal current into model boundaries. One is an absorbing tidal boundary condition, which is essentially a sponge layer but takes into account a reference value, such as tidal level and tidal current, in the sponge regime. The other a so-called absorbing-generating boundary condition, which treats tidal level and/or tidal current as the background elevation/flow.</p>
+<p>Theory</p>
+<p>The basic technique follows the sponge layer theory introduced by <a class="reference external" href="https://ascelibrary.org/doi/abs/10.1061/(ASCE)0733-950X(1999)125:4(176)">Larsen and Dancy (1983). Instead of attenuating the surface elevation and flow velocity to zero at the end of a sponge layer, we dampen shortwaves with respect to a reference level based on the method proposed by `Chen et al. (1999)</a>. The dependent variables (<span class="math notranslate nohighlight">\(\eta, u, v\)</span>) are attenuated as</p>
+<div class="math notranslate nohighlight">
+\[\eta_i = \eta_{ref} + (\eta_i - \eta_{ref})/C_s\]</div>
+<div class="math notranslate nohighlight">
+\[u_i = u_{ref} + (\eta_i - u_{ref})/C_s\]</div>
+<p>where <span class="math notranslate nohighlight">\(( )_{ref}\)</span> denotes the reference values which either tidal level or tidal current or both. <span class="math notranslate nohighlight">\(C_s\)</span> is the damping coefficient which is the same as that used in a sponge layer (see sponge layer section for detail), i.e.,</p>
+<div class="math notranslate nohighlight">
+\[C_s = \alpha_s^{\gamma_s^{(i-1)}}\]</div>
+<p>in which <span class="math notranslate nohighlight">\(i\)</span> is grid numbers, (<span class="math notranslate nohighlight">\(i = 1, 2, ...\)</span>).</p>
+<p>Absorbing tidal boundary condition</p>
+<p>For the absorbing tidal boundary condition, the reference values (<span class="math notranslate nohighlight">\(\eta_{ref}, u_{ref}, v_{ref}\)</span>) are tidal levels and tidal current velocities specified either in input.txt or in a separate tide/surge file.</p>
+<p>For a constant tidal condition, (<span class="math notranslate nohighlight">\(\eta_{ref}, u_{ref}, v_{ref}\)</span>) are constant, which are specified in input.txt. For example, in the case of tide_abs_1bc_constant in the directory of simple cases,</p>
+<blockquote>
+<div><div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>TIDAL_BC_ABS = T
+TideBcType = CONSTANT
+TideWest_ETA = 1.0
+TideEast_ETA = 1.0
+</pre></div>
+</div>
+</div></blockquote>
+<p>This is a 1D case with a tidal absorbing condition and constant tidal level specified above. The wavemaker can be any types of wavemaker available in the model. In this case, we used  WK_REG,</p>
+<blockquote>
+<div><div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>WAVEMAKER = WK_REG
+DEP_WK = 8.0
+Xc_WK = 150.0
+Yc_WK = 0.0
+Tperiod = 8.0
+AMP_WK = 0.5
+Theta_WK = 0.0
+Delta_WK = 3.0
+</pre></div>
+</div>
+</div></blockquote>
+<p>The figure shows a snapshot of surface elevation from the model. Note that the irregularity of wave surface is caused by the tidal propagation from both boundaries.</p>
+<div class="figure align-default" id="id4">
+<img alt="_images/tide_snap.jpg" src="_images/tide_snap.jpg" />
+<p class="caption"><span class="caption-text">Output from the case of tidal absorbing boundary condition.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+<p>For a time-varying tidal condition, the tidal level and velocity are specified in a file named in input.txt. For example, in the 2D case of tide_abs_2bc_data (same folder), tidal elevations are specified in two files, tide_data_west.txt, tide_data_east.txt,  with the parameter TideBcType  set as DATA type,</p>
+<blockquote>
+<div><div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>TIDAL_BC_ABS = T
+TideBcType = DATA
+TideWestFileName = tide_data_west.txt
+TideEastFileName = tide_data_east.txt
+</pre></div>
+</div>
+</div></blockquote>
+<p>The format of tidal data follows a list of ‘time, eta, u, v’ as shown in the figure below.  In this case, a flat bottom of 8 m is applied in a 2D domain and a regular wavemaker is specified . The following figure demonstrates 2D and 1D section views of surface elevation at different times. Black solid lines denote tidal levels.</p>
+<div class="align-center figure" id="id5">
+<a class="reference internal image-reference" href="_images/layout_tide_abs_only.jpg"><img alt="alternate text" src="_images/layout_tide_abs_only.jpg" style="width: 550px;" /></a>
+<p class="caption"><span class="caption-text">Layout of tidal absorbing boundary (west and east).</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+<div class="align-center figure" id="id6">
+<a class="reference internal image-reference" href="_images/tide_abs_only.jpg"><img alt="alternate text" src="_images/tide_abs_only.jpg" style="width: 550px;" /></a>
+<p class="caption"><span class="caption-text">Case: /simple_cases/tide_abs_2bc_data/. Demonstration of 2D and 1D section views of surface elevation at different times. Black solid lines denote tidal levels.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
+<p>Combined tidal and absorbing-generating boundary condition</p>
+<p>The combined tidal and absorbing-generating boundary condition incorporates the solution of the linear wave theory and tidal elevation and velocity in the sponge layer.</p>
+<p>The reference values (<span class="math notranslate nohighlight">\(\eta_{ref}, u_{ref}, v_{ref}\)</span>) are tidal levels and tidal current velocities specified either in input.txt or in a separate tide/surge file. Different from the tidal absorbing boundary condition, the reference values (<span class="math notranslate nohighlight">\(\eta_{ref}, u_{ref}/v_{ref}\)</span>) combine the tidal condition and wave solution, and specified over the entire computational domain. Inside the sponge layer, the differences between the reference  values <span class="math notranslate nohighlight">\(( )_{ref}\)</span> and model solution <span class="math notranslate nohighlight">\(( )_i\)</span> are dampened by the sponge. Outside the sponge layer, independent variables are calculated directly from the model because <span class="math notranslate nohighlight">\(C_s\)</span> is 1.0. In this study, the west-side absorbing-generating boundary condition is implemented.</p>
+<p>An example is provided In /tide_gen_abs_data/.  Figure ref{layout_gen} shows the model setup with a west-side absorbing-generating boundary condition. In input.txt</p>
+<blockquote>
+<div><div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>WAVEMAKER = ABSORBING_GENERATING
+WAVE_DATA_TYPE = DATA
+<span class="gh">WaveCompFile = wave_data.txt</span>
+<span class="gh">...</span>
+TIDAL_BC_GEN_ABS = T
+TideBcType = DATA
+TideWestFileName = tide_data_west.txt
+</pre></div>
+</div>
+</div></blockquote>
+<p>The format of tidal data is the same as the tidal absorbing boundary condition. The model is set up in a 2D sloping beach domain. Figure ref{gen_abs} shows snapshots of surface elevation at different times.</p>
+<div class="align-center figure" id="id7">
+<a class="reference internal image-reference" href="_images/layout_tide_gen_abs.jpg"><img alt="alternate text" src="_images/layout_tide_gen_abs.jpg" style="width: 550px;" /></a>
+<p class="caption"><span class="caption-text">Layout of generating and absorbing boundary (left only)</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+</div>
+<div class="align-center figure" id="id8">
+<a class="reference internal image-reference" href="_images/tide_gen_abs.jpg"><img alt="alternate text" src="_images/tide_gen_abs.jpg" style="width: 550px;" /></a>
+<p class="caption"><span class="caption-text">Case: /simple_cases/tide_gen_abs_data/. Thick dashed lines represent tidal levels. Thin black line denotes the beach slope.</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+</div>
+<p>More information</p>
+<p>List of parameters for tidal module setup can be found <a class="reference external" href="https://fengyanshi.github.io/build/html/tide_surge.html">here</a></p>
+<p><em>References</em></p>
+<p>Chen, Q., Madsen, P.A., Basco, D.R., 1999. “Current Effects on Nonlinear Interactions of Shallow–Water Waves”. J. of Waterway, Port, Coastal, and Ocean Eng. 125 (4).</p>
+<p>Larsen, J. and Dancy, H., 1983. “Open boundaries in short wave simulations – A new approach”. Coastal Eng. 7 (3), 285-297. DOI: <a class="reference external" href="https://doi.org/10.1016/0378-3839(83)90022-4">10.1016/0378-3839(83)90022-4</a>.</p>
+</div>
+<div class="section" id="sediment-transport-module">
+<h1>Sediment Transport Module<a class="headerlink" href="#sediment-transport-module" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="suspended-sediment-transport-equation-non-cohesive">
+<h2>Suspended Sediment Transport Equation (Non-cohesive)<a class="headerlink" href="#suspended-sediment-transport-equation-non-cohesive" title="Permalink to this headline">¶</a></h2>
+<p>The sediment transport module calculates sediment transport induced by both suspended load and bedload. The morphological module calculates the bed evolution based on the sediment continuity equation.</p>
+<p>Suspended sediment motion is governed by the depth-averaged sediment concentration equation as follows:</p>
+<div class="math notranslate nohighlight">
+\[(\bar{c} H)_t + \nabla_h \cdot (\bar{c} H ({\bf u}_\alpha + \bar{{\bf u} }_2)) =\nabla_h \cdot (k H (\nabla_h \bar{c})) + P - D \label{ad}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\bar{c}\)</span> is the non-dimensional depth-averaged sediment concentration normalized by sediment density. <span class="math notranslate nohighlight">\(H(\bf{u}_\alpha + \bar{\bf{u}}_2) =M\)</span> represents the flow rate per unit width defined in <a class="reference external" href="http://www.sciencedirect.com/science/article/pii/S1463500311002010">Shi et al. (2012)</a>, in which <span class="math notranslate nohighlight">\(H=h+\eta\)</span> is the total water depth. The roller-induced extra undertow can be taken into account as an option. <span class="math notranslate nohighlight">\(k\)</span> is the horizontal sediment diffusion coefficient calculated by the formula given by <a class="reference external" href="https://www.cambridge.org/core/services/aop-cambridge-core/content/view/310194D66B91765946845BB274E59F7F/S0022112059000374a.pdf/dispersion_of_marked_fluid_in_turbulent_shear_flow.pdf">Elder (1959)</a>:</p>
+<div class="math notranslate nohighlight">
+\[k = 5.93 u_{*c} H\]</div>
+<p>where <span class="math notranslate nohighlight">\(u_{*c}\)</span> is the shear velocity and can be calculated by <a class="reference external" href="10.1061/(ASCE)0733-9429(1984)110:10(1494)">van Rijn (1984)</a>:</p>
+<div class="math notranslate nohighlight">
+\[u_{*c} = \frac{\kappa}{-1 + \log (30 H / k_s)} U_c\]</div>
+<p>in which <span class="math notranslate nohighlight">\(U_c\)</span> is the depth-averaged total velocity (m/s), <span class="math notranslate nohighlight">\(k_s = 2.5 d_{50}\)</span> is Nikuradse roughness coefficient, and <span class="math notranslate nohighlight">\(d_{50}\)</span> is the median grain diameter (mm).</p>
+<p>In the advection-diffusion equation, <span class="math notranslate nohighlight">\(P\)</span> and <span class="math notranslate nohighlight">\(D\)</span> represent the erosion rate and deposition rate, respectively. The erosion rate can be calculated using van Rijn’s (1984) pickup function:</p>
+<div class="math notranslate nohighlight" id="equation-p">
+<span class="eqno">(5)<a class="headerlink" href="#equation-p" title="Permalink to this equation">¶</a></span>\[P = 0.015 \frac{d_{50}}{a} \left ( \frac{|\tau_b| - \tau_{cr}}{\tau_{cr}}\right )^{1.5} d^{-0.3}_{*} w_f\]</div>
+<p>where <span class="math notranslate nohighlight">\(a\)</span> is a reference elevation and is a function of total depth (<span class="math notranslate nohighlight">\(a = 0.01 H\)</span>), <span class="math notranslate nohighlight">\(\tau_b\)</span> is the bed shear stress, and <span class="math notranslate nohighlight">\(\tau_{cr}\)</span> is the critical shear stress. <span class="math notranslate nohighlight">\(P\)</span> has the dimension of velocity (m/s) considering the convection-diffusion equation for non-dimensional sediment concentration. <span class="math notranslate nohighlight">\(d_{*}\)</span> is dimensionless grain size defined as:</p>
+<div class="math notranslate nohighlight">
+\[d_{*} = d_{50} \left( \frac{(s-1)g}{\nu^2} \right)^{1/3}\]</div>
+<p>where <span class="math notranslate nohighlight">\(s\)</span> is the specified gravity of the sediment, and <span class="math notranslate nohighlight">\(\nu\)</span> is the kinematic viscosity coefficient. The critical bed shear stress <span class="math notranslate nohighlight">\(\tau_{cr}\)</span> used in <a class="reference internal" href="#equation-p">(5)</a> is defined as:</p>
+<div class="math notranslate nohighlight">
+\[\tau_{cr} = \rho_w (s-1)gd_{50} \theta_{cr}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\theta_{cr}\)</span> is the critical Shields parameter, approximately equal to 0.05. Based on the roughness estimate, the shear stress is expressed as:</p>
+<div class="math notranslate nohighlight">
+\[\tau_b = \rho_w \left(\frac{ 0.4}{1+\ln (k_s/30 h)} \right)^2 U_c^2\]</div>
+<p>The deposition rate <span class="math notranslate nohighlight">\(D\)</span> can be calculated using the formula of <a class="reference external" href="https://ascelibrary.org/doi/pdf/10.1061/%28ASCE%290733-9429%281999%29125%3A12%281270%29">Cao (1999)</a>:</p>
+<div class="math notranslate nohighlight">
+\[D = \gamma c w_f (1-\gamma \bar{c})^{m_o}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\gamma = \min [2,(1-n/\bar{c})]\)</span>, <span class="math notranslate nohighlight">\(n\)</span> is the sediment porosity, and <span class="math notranslate nohighlight">\(m_0\)</span> is a constant number given as 2.0.</p>
+<p><em>References</em></p>
+<p>Cao, Z. (1999) “Equilibrium near-bed concentration of suspended sediment”. <em>J. of Hydraulic Eng.</em>, 125(12): 1270-1278. DOI: 10.1061/(ASCE)0733-9429(1999)125:12(1270).</p>
+<p>Elder, J.W. (1959). “The dispersion of marked fluid in turbulent shear flow”. <em>J. of Fluid Mech.</em>, 5(4): 544-560. DOI: 10.1017/S0022112059000374.</p>
+<p>Shi, F., J.T. Kirby, J.C. Harris, J.D. Geiman, and S.T. Grilli, (2012). “A high-order adaptive time-stepping TVD solver for Boussinesq modeling of breaking waves and coastal inundation”. <em>Ocean Modelling</em>, 43-44: 36-51. DOI: 10.1016/j.ocemod.2011.12.004.</p>
+</div>
+<div class="section" id="suspended-sediment-transport-equation-cohesive">
+<h2>Suspended Sediment Transport Equation (Cohesive)<a class="headerlink" href="#suspended-sediment-transport-equation-cohesive" title="Permalink to this headline">¶</a></h2>
+<p>The transport equation for cohesive sediment uses the same 2D form of advection and diffusion equation.</p>
+<blockquote>
+<div><p>There are two sets of formulas to calculate the erosion rate. For hard bed, <a class="reference external" href="https://cedb.asce.org/CEDBsearch/record.jsp?dockey=0013640">Partheniades’ (1965) formula</a> is used:</p>
+</div></blockquote>
+<div class="math notranslate nohighlight">
+\[P = E \left(\frac{\tau_b}{\tau_{cr}} -1 \right)\]</div>
+<p>For soft bed, <a class="reference external" href="https://ascelibrary.org/doi/10.1061/%28ASCE%290733-9429%281985%29111%3A10%281308%29">Parchure and Mehta’s (1985) formula</a> is applied:</p>
+<div class="math notranslate nohighlight">
+\[P = E e^{\alpha \sqrt{\tau_b-\tau_{cr}}}\]</div>
+<p>where <span class="math notranslate nohighlight">\(E\)</span> is the erodibility specified by users, <span class="math notranslate nohighlight">\(\tau_b\)</span> is the bed shear stress, and <span class="math notranslate nohighlight">\(\tau_{cr}\)</span> is the critical shear stress for erosion.  The bed shear stress can be calculated using Soulsby et al. (1993):</p>
+<div class="math notranslate nohighlight">
+\[\tau_b = \rho_w \left(\frac{ 0.4}{1+\ln (k_s/30 h)} \right)^2 U_c^2\]</div>
+<p>which is the same as for the non-cohesive sediment, and the critical bed shear stress is usually specified by users. For soft bed, <span class="math notranslate nohighlight">\(\alpha\)</span> is a so-called alpha-coefficient specified by users.</p>
+<p>The erosion rate, <span class="math notranslate nohighlight">\(P\)</span>, has the dimension of velocity (m/s) considering the convection-diffusion equation for non-dimensional sediment concentration.</p>
+<p>The deposition rate <span class="math notranslate nohighlight">\(D\)</span> can be calculated using the formula of <a class="reference external" href="https://www.worldcat.org/title/flume-studies-of-the-transport-of-sediment-in-estuarial-shoaling-processes-final-report/oclc/8967084">Krone (1962)</a>:</p>
+<div class="math notranslate nohighlight" id="equation-depo">
+<span class="eqno">(6)<a class="headerlink" href="#equation-depo" title="Permalink to this equation">¶</a></span>\[D = w_s c_b p_d\]</div>
+<p>where <span class="math notranslate nohighlight">\(w_s\)</span> is the settling velocity which can be evaluated using a number of formulas from different sources and usually based on laboratory experiments. It should be related to processes of flocs, aggregate dimensions, drag, local concentration, salinity and other environmental factors. Users can define their own formulas by modifying the sediment module. Here, we provide a general formulation that can describe the evolution in conditions of flocculation (In <a class="reference external" href="http://dx.doi.org/10.5772/51061">Kombiadou and Krestenitis, 2014</a>):</p>
+<div class="math notranslate nohighlight">
+\[w_s = \frac{a \bar{c}^n}{(\bar{c}^2 + b^2)^m}\]</div>
+<p>The coefficients have a large range, differing in various estuarine and riverine areas. <span class="math notranslate nohighlight">\(a=0.01-0.23, b=1.3-25.0, n=0.4-2.8\)</span> and <span class="math notranslate nohighlight">\(m=1.0-2.8\)</span>. The default values in the model are
+<span class="math notranslate nohighlight">\(a=0.1;
+b=2.0;
+n=0.5;
+m=1.5.\)</span>
+For <span class="math notranslate nohighlight">\(\bar{c}=0.1 g/l\)</span>, for example, <span class="math notranslate nohighlight">\(w_s = 3.9E^{-3} m/s\)</span>.</p>
+<p>In <a class="reference internal" href="#equation-depo">(6)</a>, <span class="math notranslate nohighlight">\(c_b\)</span> is the near-bed concentration calculated by</p>
+<div class="math notranslate nohighlight">
+\[c_b = \beta \bar{c}\]</div>
+<p>in which <span class="math notranslate nohighlight">\(\beta\)</span> is the parameter. By default, we use <span class="math notranslate nohighlight">\(\beta = 1\)</span>. It can also be specified by</p>
+<div class="math notranslate nohighlight">
+\[\beta = 1+\frac{P_e}{1.25+4.75 p_d^{2.5}}\]</div>
+<p>where <span class="math notranslate nohighlight">\(P_e\)</span> is the Peclet number:</p>
+<div class="math notranslate nohighlight">
+\[P_e = \frac{6 w_s}{\kappa u_{*c}}\]</div>
+<p>in which <span class="math notranslate nohighlight">\(\kappa\)</span> is von Karman constant and <span class="math notranslate nohighlight">\(u_{*c}\)</span> is the friction velocity which can be calculated by <a class="reference external" href="10.1061/(ASCE)0733-9429(1984)110:10(1494)">van Rijn (1984)</a>:</p>
+<div class="math notranslate nohighlight">
+\[u_{*c} = \frac{\kappa}{-1 + \log (30 H / k_s)} U_c\]</div>
+<p><span class="math notranslate nohighlight">\(P_d\)</span> is the probability of deposition defined by</p>
+<div class="math notranslate nohighlight">
+\[P_d = 1- \left( \frac{\tau_b}{\tau_{cd}} \right)\]</div>
+<p>where <span class="math notranslate nohighlight">\(\tau_{cd}\)</span> is the critical shear stress for deposition defined by users.</p>
+<p><strong>Summary of Input Parameters</strong></p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(k\)</span>: diffusion coefficient, k_coh (default 10E-6). Different from the non-cohesive sediment transport, this parameter needs to be specified by users.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\tau_{cr}\)</span>: critical shear stress for erosion, Tau_cr_coh (default 0.001)</p></li>
+<li><p><span class="math notranslate nohighlight">\(\tau_{cd}\)</span>: critical shear stress for deposition, Tau_crd_coh (default 0.001)</p></li>
+<li><p><span class="math notranslate nohighlight">\(a,b,m\)</span> and <span class="math notranslate nohighlight">\(n\)</span>: Empirical parameters used to calculate settling velocity, default values are a_coh = 0.1, b_coh=2.0, n_coh=0.5, and m_coh=1.5</p></li>
+<li><p><span class="math notranslate nohighlight">\(E\)</span>: erodibility parameter, default E_coh=0.0001</p></li>
+<li><p><span class="math notranslate nohighlight">\(\alpha\)</span>: alpha-coefficient used to calculate the erosion rate for soft bed, default alpha_coh = 1.0</p></li>
+</ol>
+<p><em>References</em></p>
+<p>Kimiaghalam, N., Goharrokhi,M., Clark, S. P., 2016, Estimating cohesive sediment erosion and deposition rates in wide rivers, Canadian Journal of Civil Engineering, 43(2): 164-172 <a class="reference external" href="http://www.nrcresearchpress.com/doi/abs/10.1139/cjce-2015-0361#.XXo-2ZNKjjA">doi.org/10.1139/cjce-2015-0361</a></p>
+<p>Krone, R. B., 1962, Flume Studies of the Transport of Sediment in Estuarine Shoaling Processes. Final Report to San Francisco District U. S. Army Corps of Engineers, Washington D.C. <a class="reference external" href="https://www.worldcat.org/title/flume-studies-of-the-transport-of-sediment-in-estuarial-shoaling-processes-final-report/oclc/8967084">website for Krone 1962</a></p>
+<p>Parchure, T. M. and A. J. Mehta, 1985, Erosion of soft cohesive sediment deposits, Journal of Hydraulic Engineering – ASCE 111 no. 10: 1308–1326 <a class="reference external" href="https://ascelibrary.org/doi/10.1061/%28ASCE%290733-9429%281985%29111%3A10%281308%29">doi/10.1061</a></p>
+<p>Partheniades, E. 1965, Erosion and deposition of cohesive soils, Journal of the hydraulics division. Proceedings of the ASCE 91 no. HY1: 105–139 <a class="reference external" href="https://cedb.asce.org/CEDBsearch/record.jsp?dockey=0013640">website for Partheniades 1965</a></p>
+<p>Parchure, T. M. and A. J. Mehta, 1985, Erosion of soft cohesive sediment deposits, Journal of Hydraulic Engineering – ASCE 111 no. 10: 1308–1326 <a class="reference external" href="https://ascelibrary.org/doi/10.1061/%28ASCE%290733-9429%281985%29111%3A10%281308%29">doi:10.1061</a></p>
+<p>Shi, F., J.T. Kirby, J.C. Harris, J.D. Geiman, and S.T. Grilli, 2012, A high-order adaptive time-stepping TVD solver for Boussinesq modeling of breaking waves and coastal inundation. Ocean Modelling, 43-44: 36-51. <a class="reference external" href="http://www.sciencedirect.com/science/article/pii/S1463500311002010">DOI: 10.1016/j.ocemod.2011.12.004</a></p>
+<p>Soulsby R. L., Hamm L., Klopman, G., Myrhaug, D., Simons R.R., Thomas, G. P., 1993, Wave-current interaction within and outside the bottom boundary layer, Coastal Engineering, Volume 21, Issues 1–3, December 1993, Pages 41-69, <a class="reference external" href="https://doi.org/10.1016/0378-3839(93)90045-A">doi:10.1016/0378-3839(93)90045-A</a></p>
+<p>van Rijn, L.C., 1984, Sediment Pick‐Up Functions, Journal of Hydraulic Engineering
+Vol. 110, Issue 10 (October 1984) <a class="reference external" href="https://doi.org/10.1061/(ASCE)0733-9429(1984)110:10(1494)">doi:10.1061/(ASCE)0733-9429(1984)110:10(1494)</a></p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="guide_fun_setup.html" title="FUNWAVE-TVD SETUP"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="guide_fun_basic_mod.html" title="Modules"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">ESTCP  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="guide.html" ><strong>USER GUIDE</strong></a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="guide_funwave.html" >FUNWAVE USERS GUIDE</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="guide_fun_basic.html" >FUNWAVE-TVD BASICS</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="guide_fun_basic_mod.html" >Modules</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2022, ESTCP team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
+    </div>
+  </body>
+</html>

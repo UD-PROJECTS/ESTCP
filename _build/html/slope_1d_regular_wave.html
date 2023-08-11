@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Regular wave &#8212; ESTCP  documentation</title>
+    <link rel="stylesheet" href="_static/lglb-sphinx-doc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="JONSWAP spectral waves" href="slope_1d_jonswap.html" />
+    <link rel="prev" title="Basics for model setup" href="slope_1d_info.html" /> 
+  </head><body>
+<div class="header">
+ <p class="logo"><a href="https://ud-projects.github.io/ESTCP/_build/html/index.html">
+  <img class="logo" src="_static/../../../images/Delaware.svg" alt="Logo"/>
+ </a></p>
+</div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="slope_1d_jonswap.html" title="JONSWAP spectral waves"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="slope_1d_info.html" title="Basics for model setup"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">ESTCP  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="guide.html" ><strong>USER GUIDE</strong></a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="guide_funwave.html" >FUNWAVE USERS GUIDE</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="guide_fun_exam.html" >TRAINING EXAMPLES</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="guide_fun_exam_slope.html" accesskey="U">Waves on 1D Slope</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="slope_1d_info.html"
+                        title="previous chapter">Basics for model setup</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="slope_1d_jonswap.html"
+                        title="next chapter">JONSWAP spectral waves</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/slope_1d_regular_wave.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="regular-wave">
+<span id="section-1d-reg"></span><h1>Regular wave<a class="headerlink" href="#regular-wave" title="Permalink to this headline">¶</a></h1>
+<div class="align-center figure">
+<a class="reference internal image-reference" href="_images/eta_1d_reg.jpg"><img alt="alternate text" src="_images/eta_1d_reg.jpg" style="width: 600px; height: 300px;" /></a>
+</div>
+<dl>
+<dt>The following sections will be modified in “input.txt” for this case.</dt><dd><p>Set a descriptive title for your simulation:</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>!-----TITLE-----
+ TITLE = regular_1D
+</pre></div>
+</div>
+<p>Add a monochromatic wavemaker in a water depth of 10.0 m located 250.0 m from the left boundary that produces regular waves with amplitude 0.5 m and period 12.0 s:</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>!-----WAVEMAKER-----
+  WAVEMAKER = WK_REG
+  DEP_WK = 10.0
+  Xc_WK = 250.0
+  Yc_WK = 0.0
+  Tperiod = 12.0
+  AMP_WK = 0.5
+  Delta_WK = 3.0  ! the default is 0.5, set a larger number for nonlinear waves
+</pre></div>
+</div>
+</dd>
+</dl>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="slope_1d_jonswap.html" title="JONSWAP spectral waves"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="slope_1d_info.html" title="Basics for model setup"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">ESTCP  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="guide.html" ><strong>USER GUIDE</strong></a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="guide_funwave.html" >FUNWAVE USERS GUIDE</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="guide_fun_exam.html" >TRAINING EXAMPLES</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="guide_fun_exam_slope.html" >Waves on 1D Slope</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2022, ESTCP team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
+    </div>
+  </body>
+</html>

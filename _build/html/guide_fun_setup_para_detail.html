@@ -1,0 +1,637 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Parameters &#8212; ESTCP  documentation</title>
+    <link rel="stylesheet" href="_static/lglb-sphinx-doc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="POST-PROCESSING" href="guide_fun_post.html" />
+    <link rel="prev" title="Model Parameters" href="guide_fun_setup_para.html" /> 
+  </head><body>
+<div class="header">
+ <p class="logo"><a href="https://ud-projects.github.io/ESTCP/_build/html/index.html">
+  <img class="logo" src="_static/../../../images/Delaware.svg" alt="Logo"/>
+ </a></p>
+</div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="guide_fun_post.html" title="POST-PROCESSING"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="guide_fun_setup_para.html" title="Model Parameters"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">ESTCP  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="guide.html" ><strong>USER GUIDE</strong></a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="guide_funwave.html" >FUNWAVE USERS GUIDE</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="guide_fun_setup.html" >FUNWAVE-TVD SETUP</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="guide_fun_setup_para.html" accesskey="U">Model Parameters</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Parameters</a></li>
+<li><a class="reference internal" href="#input-txt">INPUT.txt</a></li>
+<li><a class="reference internal" href="#definitions">Definitions</a></li>
+<li><a class="reference internal" href="#simulation-checklist">Simulation checklist</a></li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="guide_fun_setup_para.html"
+                        title="previous chapter">Model Parameters</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="guide_fun_post.html"
+                        title="next chapter">POST-PROCESSING</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/guide_fun_setup_para_detail.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="parameters">
+<h1>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Examples of model setup are provided in the downloaded package (simpe example folder). If you are a beginner, we strongly suggest trying those examples first and find an example similar to your case. Introduction to those examples can be found at <a class="reference external" href="examples.html">Simple tests</a>.</p>
+</div>
+<p>In this section, we will describe the structure of the “input.txt” file and the input parameters required for each module available in FUNWAVE. Each example in the <code class="code docutils literal notranslate"><span class="pre">/simple_cases/</span></code> folder of the downloaded package has a version of the “input.txt” file that is unique to that example. You can refer to the “input.txt” file for each example when reviewing the definitions of parameters described here.</p>
+<p>In addition, you will need to create the unique executable needed to run the specific example. This executable is created by the “Makefile”. In some cases, multiple examples can be run from the same executable so long as the appropriate flags pertaining to the example are active in the “Makefile”. To learn more about makefiles and running FUNWAVE, review the Model Download and Setup page.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="input-txt">
+<h1>INPUT.txt<a class="headerlink" href="#input-txt" title="Permalink to this headline">¶</a></h1>
+<p>An example “input.txt” file is presented below. This file is from the Waves on 1D Slope example, located in <code class="code docutils literal notranslate"><span class="pre">/simple_cases/surface_wave_1d/input_files</span></code>. The input file is divided into sections with dashes, where lines with “!” are comments. Brief descriptions of the parameters are listed in each section. Most model parameters are specified in “input.txt”, except the parameters specific to a particular module. There parameters will be added to “input.txt”. Take a moment to familiarize yourself with the basic structure of the FUNWAVE input file. A comprehensive description of all parameters can be found below.</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>! INPUT FILE FOR FUNWAVE_TVD
+! NOTE: all input parameter are capital sensitive
+! --------------------TITLE-------------------------------------
+! title only for log file
+ TITLE = regular_1D
+
+! -------------------PARALLEL INFO-----------------------------
+!
+!    PX,PY - processor numbers in X and Y
+!    NOTE: make sure consistency with mpirun -np n (px*py)
+!
+ PX = 2
+ PY = 1
+
+! --------------------DEPTH-------------------------------------
+! Depth types, DEPTH_TYPE=DATA: from depth file
+!              DEPTH_TYPE=FLAT: idealized flat, need depth_flat
+!              DEPTH_TYPE=SLOPE: idealized slope,
+!                                 need slope,SLP starting point, Xslp
+!                                 and depth_flat
+ DEPTH_TYPE = SLOPE
+! if depth is flat and slope, specify flat_depth
+ DEPTH_FLAT = 10.0
+! if depth is slope, specify slope and starting point
+ SLP = 0.05
+ Xslp = 800.0
+
+! -------------------PRINT---------------------------------
+! PRINT*,
+! result folder
+ RESULT_FOLDER = output/
+
+! ------------------DIMENSION-----------------------------
+! global grid dimension
+ Mglob = 1024
+ Nglob = 3
+
+! ----------------- TIME----------------------------------
+! time: total computational time/ plot time / screen interval
+! all in seconds
+ TOTAL_TIME = 200.0
+ PLOT_INTV = 10.0
+ PLOT_INTV_STATION = 0.5
+ SCREEN_INTV = 10.0
+ PLOT_START_TIME = 100.0
+
+! -----------------GRID----------------------------------
+! if use spherical grid, in decimal degrees
+ DX = 1.0
+ DY = 1.0
+
+! ----------------WAVEMAKER------------------------------
+!  wave maker
+! LEF_SOL- left boundary solitary, need AMP,DEP, LAGTIME
+! INI_SOL- initial solitary wave, WKN B solution,
+! need AMP, DEP, XWAVEMAKER
+! INI_REC - rectangular hump, need to specify Xc,Yc and WID
+! WK_REG - Wei and Kirby 1999 internal wave maker, Xc_WK,Tperiod
+!          AMP_WK,DEP_WK,Theta_WK, Time_ramp (factor of period)
+! WK_IRR - Wei and Kirby 1999 TMA spectrum wavemaker, Xc_WK,
+!          DEP_WK,Time_ramp, Delta_WK, FreqPeak, FreqMin,FreqMax,
+!          Hmo,GammaTMA,ThetaPeak
+! WK_TIME_SERIES - fft time series to get each wave component
+!                 and then use Wei and Kirby 1999
+!          need input WaveCompFile (including 3 columns: per,amp,pha)
+!          NumWaveComp,PeakPeriod,DEP_WK,Xc_WK,Ywidth_WK
+ WAVEMAKER = WK_REG
+ DEP_WK = 10.0
+ Xc_WK = 250.0
+ Yc_WK = 0.0
+ Tperiod = 8.0
+ AMP_WK = 0.5
+ Theta_WK = 0.0
+ Delta_WK = 3.0   ! the default is 0.5, set a large number for nonlinear waves
+
+! ---------------- PERIODIC BOUNDARY CONDITION ---------
+! South-North periodic boundary condition
+!
+ PERIODIC = F
+
+! ---------------- SPONGE LAYER ------------------------
+! need to specify widths of four boundaries and parameters if needed
+! set width=0.0 if no sponge
+ DIFFUSION_SPONGE = F
+ FRICTION_SPONGE = T
+ DIRECT_SPONGE = T
+ Csp = 0.0
+ CDsponge = 1.0
+ Sponge_west_width =  180.0
+ Sponge_east_width =  0.0
+ Sponge_south_width = 0.0
+ Sponge_north_width = 0.0
+
+! ----------------PHYSICS------------------------------
+! parameters to control type of equations
+! dispersion: all dispersive terms
+! gamma1=1.0,gamma2=1.0: defalt: Fully nonlinear equations
+!----------------Friction-----------------------------
+ Cd = 0.0
+
+! ----------------NUMERICS----------------------------
+! time scheme: runge_kutta for all types of equations
+!              predictor-corrector for NSWE
+! space scheme: second-order
+!               fourth-order
+! construction: HLLC
+! cfl condition: CFL
+! froude number cap: FroudeCap
+ ! HIGH_ORDER = THIRD
+! CFL
+ CFL = 0.5
+! Froude Number Cap (to avoid jumping drop, set 1.5)
+ FroudeCap = 3.0
+
+! --------------WET-DRY-------------------------------
+! MinDepth for wetting-drying
+ MinDepth=0.01
+
+! -------------- BREAKING ----------------------------
+ VISCOSITY_BREAKING = T
+ Cbrk1 = 0.65
+ Cbrk2 = 0.35
+
+! ----------------- WAVE AVERAGE ------------------------
+! if use smagorinsky mixing, have to set -DMIXING in Makefile
+! and set averaging time interval, T_INTV_mean, default: 20s
+ T_INTV_mean = 240.0
+ STEADY_TIME=480.0
+
+! -----------------OUTPUT-----------------------------
+! stations
+! if NumberStations&gt;0, need input i,j in STATION_FILE
+ NumberStations = 0
+ STATIONS_FILE = gauges.txt
+! output variables, T=.TRUE, F = .FALSE.
+ DEPTH_OUT = T
+ ETA = T
+ MASK = T
+ WaveHeight = T
+</pre></div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="definitions">
+<h1>Definitions<a class="headerlink" href="#definitions" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>All parameter names are case sensitive.</p>
+</div>
+<p><strong>SPECIFICATION OF TITLE</strong></p>
+<ul class="simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">TITLE</span></code>:    title of your case, only used for log file.</p></li>
+</ul>
+<p><strong>SPECIFICATION OF PARALLELIZATION</strong></p>
+<ul class="simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">PX</span></code>:  number of processors to use in X</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">PY</span></code>:  number of processors to use in Y</p></li>
+</ul>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="code docutils literal notranslate"><span class="pre">PX</span></code> and <code class="code docutils literal notranslate"><span class="pre">PY</span></code> must be consistent with the number of processors defined in <code class="code docutils literal notranslate"><span class="pre">mpirun</span></code> command, e.g., <code class="code docutils literal notranslate"><span class="pre">mpirun</span> <span class="pre">-np</span> <span class="pre">n</span></code> (where n = px * py). For versions 3.0 or lower, <code class="code docutils literal notranslate"><span class="pre">PX</span> <span class="pre">(PY)</span></code> should be a common factor of <code class="code docutils literal notranslate"><span class="pre">Mglob(Nglob)</span></code>.</p>
+</div>
+</div></blockquote>
+<p><strong>SPECIFICATION OF GRID</strong></p>
+<ul class="simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">Mglob</span></code>: global dimension in x direction.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">Nglob</span></code>: global dimension in y direction.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">DX</span></code>: grid size(m) in x direction.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">DY</span></code>: grid size(n) in y direction.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">DEPTH_TYPE</span></code>: depth input type.</p></li>
+</ul>
+<blockquote>
+<div><p>The program includes several simple bathymetry configurations such as:</p>
+<ul class="simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">DEPTH_TYPE</span> <span class="pre">=</span> <span class="pre">DATA</span></code>: from a depth file.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">DEPTH_TYPE</span> <span class="pre">=</span> <span class="pre">FLAT</span></code>:  flat bottom, need <code class="code docutils literal notranslate"><span class="pre">DEPTH_FLAT</span></code></p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">DEPTH_TYPE</span> <span class="pre">=</span> <span class="pre">SLOPE</span></code>:  plane beach along x direction. It needs three parameters: slope, <code class="code docutils literal notranslate"><span class="pre">SLP</span></code>, slope starting point, <code class="code docutils literal notranslate"><span class="pre">Xslp</span></code> and flat part of depth, <code class="code docutils literal notranslate"><span class="pre">DEPTH_FLAT</span></code>.</p></li>
+</ul>
+</div></blockquote>
+<ul>
+<li><p><code class="code docutils literal notranslate"><span class="pre">DEPTH_FILE</span></code>: name of bathymetry file, if <code class="code docutils literal notranslate"><span class="pre">DEPTH_TYPE</span> <span class="pre">=</span> <span class="pre">DATA</span></code>. The file dimensions should be the same as <code class="code docutils literal notranslate"><span class="pre">Mglob</span> <span class="pre">x</span> <span class="pre">Nglob</span></code> with the first point as the south-west corner. The read format in the code is shown below:</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>DO J=1,Nglob
+
+ READ(1,*)(Depth(I,J),I=1,Mglob)
+
+ENDDO
+</pre></div>
+</div>
+</li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">DEPTH_FLAT</span></code>: water depth of flat bottom if <code class="code docutils literal notranslate"><span class="pre">DEPTH_TYPE</span> <span class="pre">=</span> <span class="pre">FLAT</span></code> or <code class="code docutils literal notranslate"><span class="pre">DEPTH_TYPE</span> <span class="pre">=</span> <span class="pre">SLOPE</span></code> (flat part of a plane beach).</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">SLP</span></code>: slope if <code class="code docutils literal notranslate"><span class="pre">DEPTH_TYPE</span> <span class="pre">=</span> <span class="pre">SLOPE</span></code>.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">Xslp</span></code>: starting x (m) of a slope, if <code class="code docutils literal notranslate"><span class="pre">DEPTH_TYPE</span> <span class="pre">=</span> <span class="pre">SLOPE</span></code>.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">WaterLevel</span></code>: Specify a water level which will be added to the input bathymetry and wavemaker depth such as <code class="code docutils literal notranslate"><span class="pre">DEP_WK</span></code> (internal wave generator) and <code class="code docutils literal notranslate"><span class="pre">DepthWaveMaker</span></code> (left boundary generator).</p></li>
+</ul>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>IF you add surge or tide level using <code class="code docutils literal notranslate"><span class="pre">WaterLevel</span></code>,  please keep <code class="code docutils literal notranslate"><span class="pre">DEP_WK</span></code> the same as the original depth in the depth file because the water level will be automatically added to the model bathymetry.</p>
+</div>
+</div></blockquote>
+<p><strong>SPECIFICATION OF TIME</strong></p>
+<ul class="simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">TOTAL_TIME</span></code>: simulation time in seconds.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">PLOT_INTV</span></code>: output interval in seconds (Note, output time is not exact because adaptive <code class="code docutils literal notranslate"><span class="pre">dt</span></code> is used.)</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">SCREEN_INTV</span></code>: time interval (s) of screen print.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">PLOT_INTV_STATION</span></code>: time interval (s) of gauge output.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">PLOT_START_TIME</span></code>: start time for output of field results (s). Default: 0.0</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">DT_fixed</span></code>: time step (s) if use fixed DT. But <code class="code docutils literal notranslate"><span class="pre">DT_fixed</span></code> will be checked by the CFL condition. IF <code class="code docutils literal notranslate"><span class="pre">DT_fixed</span></code> does not satisfy CLF, DT/2, DT/4 … will be checked until it satisfies CFL. Default is using variable DT based on CFL.</p></li>
+</ul>
+<p><strong>SPECIFICATION OF PHYSICS</strong></p>
+<ul>
+<li><p><code class="code docutils literal notranslate"><span class="pre">DISPERSION</span></code>: logical parameter for inclusion of dispersion terms.  T - calculate dispersion, F - no dispersion terms. Default: T.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">Gamma1</span></code>: parameter for linear dispersive terms. 1.0 - inclusion of linear dispersive terms, 0.0 - no linear dispersive terms. Default: 1.0.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">Gamma2</span></code>: parameter for nonlinear dispersive terms. 1.0 - inclusion of nonlinear dispersive terms, 0.0 - no nonlinear dispersive terms. Default: 1.0.</p>
+<p><code class="code docutils literal notranslate"><span class="pre">Gamma1</span> <span class="pre">=</span> <span class="pre">1.0,</span> <span class="pre">Gamma2</span> <span class="pre">=</span> <span class="pre">0.0</span></code> for NG’s equations.</p>
+<p><code class="code docutils literal notranslate"><span class="pre">Gamma1</span> <span class="pre">=</span> <span class="pre">1.0,</span> <span class="pre">Gamma2</span> <span class="pre">=</span> <span class="pre">1.0</span></code> for the fully nonlinear Boussinesq equations.</p>
+</li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">Gamma3</span></code>: parameter for linear shallow water equations (<code class="code docutils literal notranslate"><span class="pre">Gamma3</span> <span class="pre">=</span> <span class="pre">0.0</span></code> for linear SWE). When <code class="code docutils literal notranslate"><span class="pre">Gamma3</span> <span class="pre">=</span> <span class="pre">0.0,</span> <span class="pre">Gamma1</span></code> and <code class="code docutils literal notranslate"><span class="pre">Gamma2</span></code> automatically become zero. Default: 1.0.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">Beta_ref</span></code>:  parameter <span class="math notranslate nohighlight">\(\beta\)</span> defined for the reference level. <span class="math notranslate nohighlight">\(\beta\)</span> = -0.531 for NG’s and FUNWAVE equations. Default: -0.531.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">VISCOSITY_BREAKING</span></code>: logical parameter for viscous breaking. When this option is selected, <code class="code docutils literal notranslate"><span class="pre">Cbrk1</span></code> and <code class="code docutils literal notranslate"><span class="pre">Cbrk2</span></code> are needed. Default is shock-capturing type breaking.</p></li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">Cbrk1</span></code>: parameter <span class="math notranslate nohighlight">\(C1\)</span> in Kennedy et al. (2000). Default: 0.45</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">Cbrk2</span></code>: parameter <span class="math notranslate nohighlight">\(C2\)</span> in Kennedy et al. (2000). Default: 0.35</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="code docutils literal notranslate"><span class="pre">Cbrk1</span></code> and <code class="code docutils literal notranslate"><span class="pre">Cbrk2</span></code> were re-calibrated in Choi et al. (2018). <span class="math notranslate nohighlight">\(C1\)</span> is around 0.45 in FUNWAVE-TVD, instead of <span class="math notranslate nohighlight">\(C1 = 0.65\)</span> used in Kennedy et al.</p>
+</div>
+</div></blockquote>
+<ul>
+<li><p><code class="code docutils literal notranslate"><span class="pre">SWE_ETA_DEP</span></code>: ratio of height/depth for switching from Boussinesq to NSWE for shock-capturing breaking. The value is <span class="math notranslate nohighlight">\(\sim\)</span> 0.80.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">ROLLER_EFFECT</span></code>: logical parameter for roller effects. If it is set <code class="code docutils literal notranslate"><span class="pre">TRUE</span></code>, the roller and undertow effects will be taken into account into the sediment (suspended load) transport processes.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">FRICTION_MATRIX</span></code>: logical parameter for homogeneous and inhomogeneous frction field.  T - inhomogeneous, F - homogeneous. Default: F.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">FRICTION_FILE</span></code>: name of friction file if <code class="code docutils literal notranslate"><span class="pre">FRICTION_MATRIX</span> <span class="pre">=</span> <span class="pre">T</span></code>; the file dimensions should be <code class="code docutils literal notranslate"><span class="pre">Mglob</span> <span class="pre">x</span> <span class="pre">Nglob</span></code> with the first point as the south-west corner. The read format in the code is shown below:</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>DO J=1,Nglob
+
+ READ(1,*)(Cd(I,J),I=1,Mglob)a
+
+ENDDO
+</pre></div>
+</div>
+</li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">Cd_fixed</span></code>: fixed bottom friction coefficient.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">SHOW_BREAKING</span></code>: logical parameter to calculate breaking index. Note that, if <code class="code docutils literal notranslate"><span class="pre">VISCOSITY_BREAKING</span></code> is not selected, breaking is calculated using shock wave capturing scheme. The index calculated here is based on Kennedy et al. (2000).</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">WAVEMAKER_Cbrk</span></code>: breaking parameter inside wavemaker. For some cases, the wave breaks inside the wavemaker. This parameter provides <code class="code docutils literal notranslate"><span class="pre">Cbrk</span></code> inside the wavemaker domain. For most of cases, set <code class="code docutils literal notranslate"><span class="pre">WAVEMAKER_Cbrk</span> <span class="pre">=</span> <span class="pre">Cbrk1</span></code> or higher. Default: LARGE.</p></li>
+</ul>
+<p><strong>SPECIFICATION OF NUMERICS</strong></p>
+<ul class="simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">Time_Scheme</span></code>: stepping option, <code class="code docutils literal notranslate"><span class="pre">Runge_Kutta</span></code> or <code class="code docutils literal notranslate"><span class="pre">Predictor_Corrector</span></code> (not suggested for this version). Default: <code class="code docutils literal notranslate"><span class="pre">Runge_Kutta</span></code>.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">HIGH_ORDER</span></code>: spatial scheme option, <code class="code docutils literal notranslate"><span class="pre">FOURTH</span></code> for the fourth-order, <code class="code docutils literal notranslate"><span class="pre">THIRD</span></code> for the third-order, and <code class="code docutils literal notranslate"><span class="pre">SECOND</span></code> for the second-order (not suggested for Boussinesq modeling).  Default: <code class="code docutils literal notranslate"><span class="pre">FOURTH</span></code>.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">CONSTRUCTION</span></code>: construction method, <code class="code docutils literal notranslate"><span class="pre">HLL</span></code> for HLL scheme, otherwise for averaging scheme. Default: HLL.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">CFL</span></code>: CFL number, CFL <span class="math notranslate nohighlight">\(\sim\)</span> 0.5 (default).</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">FroudeCap</span></code>: cap for Froude number in velocity calculation for efficiency. The value could be 1.0 <span class="math notranslate nohighlight">\(\sim\)</span> 10.0. Default: 3.0</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">MinDepth</span></code>: minimum water depth (m) for wetting and drying scheme. Suggestion: <code class="code docutils literal notranslate"><span class="pre">MinDepth</span> <span class="pre">=</span> <span class="pre">0.001</span></code> for lab scale and 0.01 for field scale. Defaut: 0.01.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">MinDepthFrc</span></code>: merge to <code class="code docutils literal notranslate"><span class="pre">MinDepth</span></code> for Version 3.1 or higher. If both <code class="code docutils literal notranslate"><span class="pre">MinDepth</span></code> and <code class="code docutils literal notranslate"><span class="pre">MinDepthFrc</span></code> are specified, the model takes the Maximum value of <code class="code docutils literal notranslate"><span class="pre">MinDepth</span></code> and <code class="code docutils literal notranslate"><span class="pre">MinDepthFrc</span></code>.</p></li>
+</ul>
+<p><strong>SPECIFICATION OF WAVEMAKER</strong></p>
+<ul>
+<li><p><code class="code docutils literal notranslate"><span class="pre">WAVEMAKER</span></code>: wavemaker type.</p></li>
+<li><dl class="simple">
+<dt><code class="code docutils literal notranslate"><span class="pre">WAVEMAKER</span> <span class="pre">=</span> <span class="pre">INI_REC</span></code>: initial rectangular hump</dt><dd><p>need <code class="code docutils literal notranslate"><span class="pre">Xc,Yc</span></code> and <code class="code docutils literal notranslate"><span class="pre">WID</span></code></p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><code class="code docutils literal notranslate"><span class="pre">WAVEMAKER</span> <span class="pre">=</span> <span class="pre">LEF_SOL</span></code>: left boundary solitary</dt><dd><p>need <code class="code docutils literal notranslate"><span class="pre">AMP,</span> <span class="pre">DEP</span></code>, and <code class="code docutils literal notranslate"><span class="pre">LAGTIME</span></code></p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><code class="code docutils literal notranslate"><span class="pre">WAVEMAKER</span> <span class="pre">=</span> <span class="pre">INI_SOL</span></code>: initial solitary wave propagate in +x direction, WKN B solution</dt><dd><p>need <code class="code docutils literal notranslate"><span class="pre">AMP,</span> <span class="pre">DEP</span></code>, and <code class="code docutils literal notranslate"><span class="pre">XWAVEMAKER</span></code></p>
+</dd>
+</dl>
+</li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">WAVEMAKER</span> <span class="pre">=</span> <span class="pre">INI_OTH</span></code>:  other initial distribution specified in the code by users</p></li>
+<li><dl class="simple">
+<dt><code class="code docutils literal notranslate"><span class="pre">WAVEMAKER</span> <span class="pre">=</span> <span class="pre">WK_REG</span></code>: Wei and Kirby 1999 internal wave maker</dt><dd><p>need <code class="code docutils literal notranslate"><span class="pre">Xc_WK,</span> <span class="pre">Yc_WK,</span> <span class="pre">Ywidth_WK,</span> <span class="pre">Tperiod,</span> <span class="pre">AMP_WK,</span> <span class="pre">DEP_WK,</span> <span class="pre">Theta_WK,</span> <span class="pre">and</span> <span class="pre">Time_ramp</span></code> (factor of period)</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><code class="code docutils literal notranslate"><span class="pre">WAVEMAKER</span> <span class="pre">=</span> <span class="pre">WK_IRR</span></code>:  Wei and Kirby 1999 TMA spectrum wavemaker (internal)</dt><dd><p>need <code class="code docutils literal notranslate"><span class="pre">Xc_WK,</span> <span class="pre">Yc_WK,</span> <span class="pre">Ywidth_WK,</span> <span class="pre">DEP_WK,</span> <span class="pre">Time_ramp,</span> <span class="pre">Delta_WK,</span>&#160; <span class="pre">FreqPeak,</span> <span class="pre">FreqMin,FreqMax,</span> <span class="pre">Hmo,</span> <span class="pre">GammaTMA</span></code> (default: 3.3 ), <code class="code docutils literal notranslate"><span class="pre">ThetaPeak</span></code> (default: 0.0), <code class="code docutils literal notranslate"><span class="pre">Nfreq</span></code> (default: 45), <code class="code docutils literal notranslate"><span class="pre">Ntheta</span></code> (default: 24), <code class="code docutils literal notranslate"><span class="pre">EqualEnergy</span></code> (if <code class="code docutils literal notranslate"><span class="pre">TRUE</span></code>, this means that the frequency splitting is based on Equal-Energy, otherwise, based on Equal-Frequency space)</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><code class="code docutils literal notranslate"><span class="pre">WAVEMAKER</span> <span class="pre">=</span> <span class="pre">JON_2D</span></code>:  JONSWAP spectrum wavemaker (internal)</dt><dd><p>need <code class="code docutils literal notranslate"><span class="pre">Xc_WK,</span> <span class="pre">Yc_WK,</span> <span class="pre">Ywidth_WK,</span>
+<span class="pre">DEP_WK,</span> <span class="pre">Time_ramp,</span> <span class="pre">Delta_WK,</span>&#160; <span class="pre">FreqPeak,</span> <span class="pre">FreqMin,FreqMax,</span>
+<span class="pre">Hmo,</span> <span class="pre">GammaTMA</span></code> (default: 3.3 ), <code class="code docutils literal notranslate"><span class="pre">ThetaPeak</span></code> (default: 0.0), <code class="code docutils literal notranslate"><span class="pre">Nfreq</span></code> (default: 45), <code class="code docutils literal notranslate"><span class="pre">Ntheta</span></code> (default: 24)</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><code class="code docutils literal notranslate"><span class="pre">WAVEMAKER</span> <span class="pre">=</span> <span class="pre">JON_1D</span></code>:  JONSWAP 1D spectrum wavemaker (internal)</dt><dd><p>need <code class="code docutils literal notranslate"><span class="pre">Xc_WK,</span> <span class="pre">Yc_WK,</span> <span class="pre">Ywidth_WK,</span>
+<span class="pre">DEP_WK,</span> <span class="pre">Time_ramp,</span> <span class="pre">Delta_WK,</span>&#160; <span class="pre">FreqPeak,</span> <span class="pre">FreqMin,</span> <span class="pre">FreqMax,</span>
+<span class="pre">Hmo,</span> <span class="pre">GammaTMA</span></code> (default: 3.3 ), <code class="code docutils literal notranslate"><span class="pre">Nfreq</span></code> (default: 45)</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><code class="code docutils literal notranslate"><span class="pre">WAVEMAKER</span> <span class="pre">=</span> <span class="pre">TMA_1D</span></code>:  TMA 1D spectrum wavemaker (internal)</dt><dd><p>need <code class="code docutils literal notranslate"><span class="pre">Xc_WK,</span> <span class="pre">Yc_WK,</span> <span class="pre">Ywidth_WK,</span>
+<span class="pre">DEP_WK,</span> <span class="pre">Time_ramp,</span> <span class="pre">Delta_WK,</span>&#160; <span class="pre">FreqPeak,</span> <span class="pre">FreqMin,</span> <span class="pre">FreqMax,</span>
+<span class="pre">Hmo,</span> <span class="pre">GammaTMA</span></code> (Note, still use TMA Gamma, default: 3.3 ), <code class="code docutils literal notranslate"><span class="pre">Nfreq</span></code> (default: 45)</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><code class="code docutils literal notranslate"><span class="pre">WAVEMAKER</span> <span class="pre">=</span> <span class="pre">WK_TIME_SERIES</span></code>:</dt><dd><p>provide an fft of a time series to get each wave component, and then use Wei and Kirby’s (1999) wavemaker. For this internal wavemaker, the wave angle is zero (x direction) for all wave components. Need input <code class="code docutils literal notranslate"><span class="pre">WaveCompFile</span></code> (including 3 columns: <code class="code docutils literal notranslate"><span class="pre">per,</span> <span class="pre">amp,</span> <span class="pre">pha</span></code>) and <code class="code docutils literal notranslate"><span class="pre">NumWaveComp,</span> <span class="pre">PeakPeriod,</span> <span class="pre">DEP_WK,</span> <span class="pre">Xc_WK,</span> <span class="pre">Ywidth_WK</span></code></p>
+</dd>
+</dl>
+</li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">WAVEMAKER</span> <span class="pre">=</span> <span class="pre">WK_DATA2D</span></code>: 2D directional spectrum data specified in <code class="code docutils literal notranslate"><span class="pre">WaveCompFile</span></code>. Internal wavemaker. Need <code class="code docutils literal notranslate"><span class="pre">Xc_WK,</span> <span class="pre">Yc_WK,</span> <span class="pre">DEP_WK,</span> <span class="pre">Delta_WK</span></code>.</p>
+<p>Format of <code class="code docutils literal notranslate"><span class="pre">WaveCompFile</span></code>:</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>62  35   - NumFreq NumDir
+
+0.0925000011921 - PeakPeriod
+
+0.0400 - Freq
+
+0.0475 - Freq
+
+<span class="cp">...</span>
+
+-0.05  - Dir (degree)
+
+0.0    - Dir (degree)
+
+<span class="cp">...</span>
+
+0.01133044 0.00973217 ... (amplitude,m)
+</pre></div>
+</div>
+<p>An example for preparing WaveCompFile can be found in /simple_cases/beach_2d/spectral_data/. It is a case which converts wave data from FRF to the model input. Run the matlab script mk_2d_1d_spec_frf.m to generate a file called wave2d_frf.txt. In input.txt, specify <code class="code docutils literal notranslate"><span class="pre">WaveCompFile</span> <span class="pre">=</span> <span class="pre">../spectral_data/MATLAB/wave2d_frf.txt</span></code></p>
+<p>The read format in fortran:</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span> OPEN(1,FILE=TRIM(WaveCompFile))
+
+  READ(1,*)NumFreq,NumDir
+
+  ALLOCATE (Amp_Ser(NumFreq,NumDir),  &amp;
+
+     Per_Ser(NumFreq),Theta_Ser(NumDir))
+
+  READ(1,*)PeakPeriod
+
+  DO J=1,NumFreq
+
+     READ(1,*)Per_Ser(J)
+
+  ENDDO
+
+  DO I=1,NumDir
+
+     READ(1,*)Theta_Ser(I)
+
+  ENDDO
+
+  DO I=1,NumDir
+
+    READ(1,*)(Amp_Ser(J,I),J=1,NumFreq)
+
+  ENDDO
+
+! you dont have to input phase info. The program will skip the phase info
+! if there is no more data below Amp_Ser
+  DO I=1,NumDir
+
+    READ(1,*,END=110)(Phase_2D(J,I),J=1,NumFreq)
+
+  ENDDO
+
+ CLOSE(1)
+</pre></div>
+</div>
+</li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">WAVEMAKER</span> <span class="pre">=</span> <span class="pre">LEFT_BC_IRR</span></code>: Wavemaker at the left boundary (ghost cells). This type of wavemaker reflects waves at the left boundary. Need <code class="code docutils literal notranslate"><span class="pre">WAVE_DATA_TYPE</span> <span class="pre">(DATA,</span> <span class="pre">TMA2D,</span> <span class="pre">JON2D,</span> <span class="pre">JON1D)</span></code> and other parameters as the same as in the internal wavemaker. Although it is an irregular wavemaker, it can generate regular waves using <code class="code docutils literal notranslate"><span class="pre">WAVE_DATA_TYPE</span> <span class="pre">=</span> <span class="pre">DATA</span></code> by specifying a single wave component.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">WAVEMAKER</span> <span class="pre">=</span> <span class="pre">INI_GAUSSIAN</span> <span class="pre">or</span> <span class="pre">INI_GAU</span></code>: initial Gaussian hump. Need <code class="code docutils literal notranslate"><span class="pre">AMP,</span> <span class="pre">Xc,</span> <span class="pre">Yc,</span> <span class="pre">and</span> <span class="pre">WID</span></code>.</p>
+<p>Definitions:</p>
+</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">WAVE_DATA_TYPE</span></code>: Type of wave data needed for <code class="code docutils literal notranslate"><span class="pre">LEFT_BC_IRR</span></code> WaveMaker. It can be DATA or other types used for internal wavemakers</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">AMP</span></code>: amplitude (m) of initial <span class="math notranslate nohighlight">\(\eta\)</span>, if <code class="code docutils literal notranslate"><span class="pre">WAVEMAKER</span> <span class="pre">=</span> <span class="pre">INI_REC,</span> <span class="pre">WAVEMAKER</span> <span class="pre">=</span> <span class="pre">INI_SOL,</span> <span class="pre">WAVEMAKER</span> <span class="pre">=</span> <span class="pre">LEF_SOL</span></code>.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">DEP</span></code>: water depth at wavemaker location, if <code class="code docutils literal notranslate"><span class="pre">WAVEMAKER</span> <span class="pre">=</span> <span class="pre">INI_SOL,</span> <span class="pre">WAVEMAKER</span> <span class="pre">=</span> <span class="pre">LEF_SOL</span></code>.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">LAGTIME</span></code>, time lag (s) for the solitary wave generated on the left boundary, e.g., <code class="code docutils literal notranslate"><span class="pre">WAVEMAKER</span> <span class="pre">=</span> <span class="pre">LEF_SOL</span></code>.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">XWAVEMAKER</span></code>: x (m) coordinate for <code class="code docutils literal notranslate"><span class="pre">WAVEMAKER</span> <span class="pre">=</span> <span class="pre">INI\_SOL</span></code>.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">Xc</span></code>: x (m) coordinate of the center of  a rectangular hump if <code class="code docutils literal notranslate"><span class="pre">WAVEMAKER</span> <span class="pre">=</span> <span class="pre">INI_REC</span></code>.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">Yc</span></code>: y (m) coordinate of the center of  a rectangular hump if <code class="code docutils literal notranslate"><span class="pre">WAVEMAKER</span> <span class="pre">=</span> <span class="pre">INI_REC</span></code>.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">WID</span></code>: width (m) of  a rectangular hump if <code class="code docutils literal notranslate"><span class="pre">WAVEMAKER</span> <span class="pre">=</span> <span class="pre">INI\_REC,</span> <span class="pre">or</span> <span class="pre">INI\_GAU</span></code>.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">Time_ramp</span></code>: time ramp (s) for Wei and Kirby (1999) wavemaker. Default: 0.0.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">Delta_WK</span></code>: width parameter <span class="math notranslate nohighlight">\(\delta\)</span>  for Wei and Kirby (1999) wavemaker.    Need trial and error, usually, <span class="math notranslate nohighlight">\(\delta\)</span> =  <span class="math notranslate nohighlight">\(1.0 \sim 3.0\)</span>.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">DEP_WK</span></code>: water depth (m) for Wei and Kirby (1999) wavemaker.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">Xc_WK</span></code>: x coordinate (m) for Wei and Kirby (1999) wavemaker.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">Yc_WK</span></code>: y coordinate (m) for Wei and Kirby (1999) wavemaker.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">Ywidth_WK</span></code>: width (m) in y direction for Wei and Kirby (1999) wavemaker. Default: LARGE (999999.0).</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">Tperiod</span></code>: period (s) of regular wave for Wei and Kirby (1999) wavemaker.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">AMP_WK</span></code>: amplitude (m) of regular wave for Wei and Kirby (1999) wavemaker.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">Theta_WK</span></code>: direction (degrees) of regular wave for Wei and Kirby (1999) wavemaker. Note: it may be adjusted if a periodic boundary condition is used. A warning will be given if adjustment is made.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">Nfreq</span></code>: number of frequency components. Default: 45.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">Ntheta</span></code>: number of direction components. Default: 24.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">FreqPeak</span></code>: peak frequency (1/s) for Wei and Kirby (1999) irregular wavemaker.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">FreqMin</span></code>: low frequency cutoff (1/s) for Wei and Kirby (1999) irregular wavemaker.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">FreqMax</span></code>: high frequency cutoff (1/s) for Wei and Kirby (1999) irregular wavemaker.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">Hmo</span></code>: Hmo (m) for Wei and Kirby (1999) irregular wavemaker.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">GammaTMA</span></code>: TMA parameter <span class="math notranslate nohighlight">\(\gamma\)</span> for Wei and Kirby (1999) irregular wavemaker. <code class="code docutils literal notranslate"><span class="pre">GammaTMA</span> <span class="pre">=</span> <span class="pre">3.3</span></code> if JONSWAP is used.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">ThetaPeak</span></code>: peak direction (degrees) for Wei and Kirby (1999) irregular wavemaker.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">Sigma_Theta</span></code>: parameter of directional spectrum for Wei and Kirby (1999) irregular wavemaker.</p></li>
+</ul>
+</div></blockquote>
+<p><strong>SPECIFICATION OF TIDE AND SURGE</strong></p>
+<ul class="simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">TIDAL_BC_ABS</span></code>: logical parameter for tidal absorbing boundary conditions, T - tide and surge at open boundaries, F - no tide or surge.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">TIDAL_BC_GEN_ABS</span></code>: logical parameter for the combined tidal and absorbing-generating boundary conditions, T - ture, F - false.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">TideBcType</span></code>: string parameter for data types. Default: TideBcType = CONSTANT</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">TideWest_ETA</span></code>: constant eta value at the WEST boundary.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">TideWest_U</span></code>: constant u value at the WEST boundary, defalut: 0.0.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">TideWest_V</span></code>: constant v value at the WEST boundary, defalut: 0.0.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">TideEast_ETA</span></code>: constant eta value at the EAST boundary.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">TideEast_U</span></code>: constant u value at the EAST boundary, defalut: 0.0.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">TideEast_V</span></code>: constant v value at the EAST boundary, defalut: 0.0.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">TideSouth_ETA</span></code>: constant eta value at the SOUTH boundary.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">TideSouth_U</span></code>: constant u value at the SOUTH boundary, defalut: 0.0.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">TideSouth_V</span></code>: constant v value at the SOUTH boundary, defalut: 0.0.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">TideNorth_ETA</span></code>: constant eta value at the NORTH boundary.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">TideNorth_U</span></code>: constant u value at the NORTH boundary, defalut: 0.0.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">TideNorth_V</span></code>: constant v value at the NORTH boundary, defalut: 0.0.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">TideWestFileName</span></code>: file name for WEST boundary data.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">TideEastFileName</span></code>: file name for EAST boundary data.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">TideSouthFileName</span></code>: file name for SOUTH boundary data.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">TideNorthFileName</span></code>: file name for NORTH boundary data.</p></li>
+</ul>
+<p><strong>SPECIFICATION OF SPONGE LAYER</strong></p>
+<ul class="simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">DIRECT_SPONGE</span></code>: logical parameter for L-D type sponge, T - sponge layer, F - no sponge layer.</p>
+<ul>
+<li><p><code class="code docutils literal notranslate"><span class="pre">R_sponge</span></code>: decay rate in L-D type sponge layer. Its values are between 0.85 <span class="math notranslate nohighlight">\(\sim\)</span> 0.95. Default: 0.85.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">A_sponge</span></code>: maximum damping magnitude in L-D type sponge. The value is <span class="math notranslate nohighlight">\(\sim\)</span> 5.0. Default: 5.0</p></li>
+</ul>
+</li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">FRICTION_SPONGE</span></code>: logical parameter for friction type sponge, T - sponge layer, F - no sponge layer.</p>
+<ul>
+<li><p><code class="code docutils literal notranslate"><span class="pre">CDsponge</span></code>: The maximum Cd for friction type sponge. Default: 10.0</p></li>
+</ul>
+</li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">DIFFUSION_SPONGE</span></code>: logical parameter for diffusion type sponge, T - sponge layer, F - no sponge layer.</p>
+<ul>
+<li><p><code class="code docutils literal notranslate"><span class="pre">Csp</span></code>: The maximum diffusion coefficient for diffusion type sponge. Default: 1.0</p></li>
+</ul>
+</li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">Sponge_west_width</span></code>: width (m) of sponge layer at west boundary.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">Sponge_east_width</span></code>:   width (m) of sponge layer at east boundary.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">Sponge_south_width</span></code>: width (m) of sponge layer at south boundary.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">Sponge_north_width</span></code>: width (m) of sponge layer at north boundary</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">RESULT_FOLDER</span></code>: result folder name, e.g., <code class="code docutils literal notranslate"><span class="pre">RESULT_FOLDER</span> <span class="pre">=</span> <span class="pre">/Users/tmp/</span></code></p></li>
+</ul>
+<p><strong>SPECIFICATION OF OUTPUT</strong></p>
+<ul class="simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">NumberStations</span></code>: number of station for output. If NumberStations <span class="math notranslate nohighlight">\(&gt; 0\)</span>, need input i,j in <code class="code docutils literal notranslate"><span class="pre">STATIONS_FILE</span></code></p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">OUTPUT_RES</span></code>: integer parameter for output data resolution. e.g. 2 for print every 2 points</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">DEPTH_OUT</span></code>: logical parameter for output depth. T or F.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">U</span></code>: logical parameter for output u. T or F.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">V</span></code>: logical parameter for output v. T or F.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">ETA</span></code>: logical parameter for output <span class="math notranslate nohighlight">\(\eta\)</span>. T or F.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">MASK</span></code>: logical parameter for output wetting-drying MASK. T or F.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">MASK9</span></code>: logical parameter for output MASK9 (switch for Boussinesq/NSWE). T or F.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">SourceX</span></code>: logical parameter for output source terms in x direction. T or F.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">SourceY</span></code>:  logical parameter for output source terms in y direction. T or F.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">P</span></code>:  logical parameter for output of  momentum flux in x direction. T or F.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">Q</span></code>:  logical parameter for output of  momentum flux in y direction. T or F.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">Fx</span></code>: logical parameter for output of numerical flux F in x direction. T or F.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">Fy</span></code>: logical parameter for output of numerical flux F in y direction. T or F.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">Gx</span></code>: logical parameter for output of numerical flux G in x direction. T or F.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">Gy</span></code>: logical parameter for output of numerical flux G in y direction. T or F.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">AGE</span></code>: logical parameter for output of breaking age. T or F.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">HMAX</span></code>: logical parameter for output of recorded maximum surface elevation . T or F.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">HMIN</span></code>: logical parameter for output of recorded minimum surface elevation . T or F.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">UMAX</span></code>: logical parameter for output of recorded maximum velocity . T or F.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">VORMAX</span></code>: logical parameter for output of recorded maximum vorticity . T or F.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">MFMAX</span></code>: logical parameter for output of recorded maximum momentum flux . T or F.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">OUT_Time</span></code>: logical parameter for output of recorded tsunami arrival time . T or F.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">WaveHeight</span></code>: logical parameter for output of wave height, Hsig, Hrms, Havg. T or F.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">OUT_METEO</span></code>: logical parameter for output of pressure field. T or F.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">ROLLER</span></code>: logical parameter for output of roller-induced flux. T or F.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">UNDERTOW</span></code>: logical parameter for output of undertow. T or F.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">OUT_NU</span></code>: logical parameter for output of breaking location. T or F.</p></li>
+</ul>
+</div>
+<div class="section" id="simulation-checklist">
+<h1>Simulation checklist<a class="headerlink" href="#simulation-checklist" title="Permalink to this headline">¶</a></h1>
+<p>After the FUNWAVE-TVD model has been downloaded and compiled on either your local machine or remote computing environment (e.g., HPC or AWS Cloud), and you’ve familiarized yourself with the examples in the model repository, you’re ready to begin running numerical wave simulations for your application. If you haven’t yet downloaded and compiled the model, follow the instructions the download page.</p>
+<p>Below is a simple checklist to review before hitting “go” on a simulation. This checklist was designed to reduce the probability of experiencing an error when initiating a new simulation; however, it is not comprehensive of all possible input parameters and input file conditions for all applications.</p>
+<ol class="arabic simple">
+<li><p>Input wave conditions are within the valid range of the model.</p></li>
+<li><p>For stability, the ratio of DX and water depth is greater than 1/15.</p></li>
+<li><p>The number of processors to request on the HPC or local machine matches the product of PX and PY from “input.txt”. This number should be a divisor of the number of available processors or cores per compute node (e.g., if 1 node supports 44 processors, -np must be 1, 2, 4, 11, 22, or 44).</p></li>
+<li><p>Cross-reference the name and path of the FUNWAVE executable file to be used for the simulation in the run command or PBS script (if submitting a job on an HPC environment).</p></li>
+<li><p>Cross-reference input file names (input.txt, depth.txt, gauges.txt or stations.txt, friction.txt, etc.) across the working directory, “input.txt”, and the PBS script (if submitting a job on an HPC environment).</p></li>
+<li><p>Global input filetypes (e.g., depth.txt and friction.txt) are the same size as the domain (Mglob x Nglob) starting from the south-west corner. If generating files in Python, the bathy array will have Nglob rows and Mglob columns.</p></li>
+<li><p>If using a depth type of FLAT or SLOPE, the DEPTH_FLAT = DEP_WK at the wavemaker. If using a depth type of DATA, ensure that the DEP_WK at XC_WK matches the depth at that location in the “bathy.txt”. For stability, it is best to artificially smooth the bathymetry to a constant depth at and around the wavemaker.</p></li>
+<li><p>If transferring files from a Windows to a Linux machine (in an HPC environment, for example), run <code class="code docutils literal notranslate"><span class="pre">dos2unix</span> <span class="pre">[filename]</span></code> on input files to eliminate any possible Windows return characters (^M) at the end of a line.</p></li>
+</ol>
+<p>If you have experience with running many FUNWAVE-TVD simulations and have recommendations to add to this simple checklist with respect to the Central, Vessel, Sediment, or Meteo modules, please send an email the FUNWAVE user group with the subject “Checklist Recommendations”. We will consider your recommendations and include them on the Wiki as appropriate. We appreciate your support and engagement as the modeling community and the model itself continues to evolve and grow.</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="guide_fun_post.html" title="POST-PROCESSING"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="guide_fun_setup_para.html" title="Model Parameters"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">ESTCP  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="guide.html" ><strong>USER GUIDE</strong></a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="guide_funwave.html" >FUNWAVE USERS GUIDE</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="guide_fun_setup.html" >FUNWAVE-TVD SETUP</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="guide_fun_setup_para.html" >Model Parameters</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2022, ESTCP team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
+    </div>
+  </body>
+</html>

@@ -22,6 +22,8 @@ This project will compare model predictions of coastal flooding at representativ
    :caption: Contents:
 
    models
+   guide
+   demo
    applications
    team
 
