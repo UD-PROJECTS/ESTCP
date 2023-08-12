@@ -112,7 +112,7 @@ For this example, you will set the following in "input.txt". **Remember that all
          Sponge_north_width = 0.0
 
 
-  **Keep the default values** for the :code:`PHYSICS, NUMERICS, WET-DRY,` and :code:`BREAKING` sections. Refer to :ref:`section-definitions` for a description of all parameters.
+  **Keep the default values** for the :code:`PHYSICS, NUMERICS, WET-DRY,` and :code:`BREAKING` sections. 
 
   Set the wave average properties to 100.0 s:
 

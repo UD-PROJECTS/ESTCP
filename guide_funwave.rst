@@ -9,3 +9,4 @@ FUNWAVE USERS GUIDE
    guide_fun_setup
    guide_fun_post
    guide_fun_exam
+   guide_fun_real
