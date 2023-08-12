@@ -1,6 +1,6 @@
 
-NEARCOM USERS GUIDE
-#####################
+NEARCOM USERS GUIDE (COMPLETED)
+###################################
 
 .. toctree::
    :maxdepth: 2
