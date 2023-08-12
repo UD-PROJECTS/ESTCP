@@ -1,6 +1,6 @@
 
-NearCoM
-#############
+NearCoM (completed)
+######################
 
 `NearCoM Documentation <https://fengyanshi.github.io/NEARCOM-TVD/WIKI/_build/html/index.html>`_
 

@@ -1,6 +1,6 @@
 
-FUNWAVE USERS GUIDE
-#####################
+FUNWAVE USERS GUIDE (completed)
+#################################
 
 .. toctree::
    :maxdepth: 2

@@ -12,4 +12,3 @@
    mod_xbeach
    mod_funwave
    mod_nearcom
-   mod_subgrid

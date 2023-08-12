@@ -1,6 +1,6 @@
 
-FUNWAVE-TVD
-#############
+FUNWAVE-TVD (completed)
+###########################
 
 `FUNWAVE-TVD Documentation <https://fengyanshi.github.io/build/html/index.html>`_
 
