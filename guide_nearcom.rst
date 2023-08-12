@@ -1,5 +1,5 @@
 
-NEARCOM USERS GUIDE (COMPLETED)
+NEARCOM USERS GUIDE (completed)
 ###################################
 
 .. toctree::
