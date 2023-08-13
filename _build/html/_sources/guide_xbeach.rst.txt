@@ -1,4 +1,4 @@
 
-XBEACH USERS GUIDE
-#####################
+XBEACH USERS GUIDE (*need update*)
+####################################
 

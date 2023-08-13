@@ -2,7 +2,7 @@
 Empirical model
 #################
 
-.. figure:: images/models/emperical_model.png
+.. figure:: images/models/sketch.png
     :width: 400px
     :align: center
     :height: 150px

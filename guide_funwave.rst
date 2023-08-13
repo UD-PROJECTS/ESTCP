@@ -1,5 +1,5 @@
 
-FUNWAVE USERS GUIDE (completed)
+FUNWAVE USERS GUIDE
 #################################
 
 .. toctree::

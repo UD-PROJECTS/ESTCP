@@ -6,4 +6,6 @@
 .. toctree::
    :maxdepth: 2
    
-   app_norfork
+   site_norfolk
+   site_tyndall
+   site_roi

@@ -16,7 +16,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="DEMONSTRATION" href="demo.html" />
-    <link rel="prev" title="XBEACH USERS GUIDE" href="guide_xbeach.html" /> 
+    <link rel="prev" title="XBEACH USERS GUIDE (need update)" href="guide_xbeach.html" /> 
   </head><body>
 <div class="header">
  <p class="logo"><a href="https://ud-projects.github.io/ESTCP/_build/html/index.html">
@@ -34,7 +34,7 @@
           <a href="demo.html" title="DEMONSTRATION"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="guide_xbeach.html" title="XBEACH USERS GUIDE"
+          <a href="guide_xbeach.html" title="XBEACH USERS GUIDE (need update)"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">ESTCP  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="guide.html" accesskey="U"><strong>USER GUIDE</strong></a> &#187;</li> 
@@ -44,7 +44,7 @@
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
   <p class="topless"><a href="guide_xbeach.html"
-                        title="previous chapter">XBEACH USERS GUIDE</a></p>
+                        title="previous chapter">XBEACH USERS GUIDE (<em>need update</em>)</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="demo.html"
                         title="next chapter"><strong>DEMONSTRATION</strong></a></p>
@@ -75,6 +75,21 @@
             
   <div class="section" id="emperical-model-users-guide">
 <h1>EMPERICAL MODEL USERS GUIDE<a class="headerlink" href="#emperical-model-users-guide" title="Permalink to this headline">¶</a></h1>
+<p>Empirical models for components of TWL are largely data-driven or based on machine learning (e.g. Pearson et al., 2017; Suanez et al., 2016; Tadesse et al., 2020). The empiricism is generally manifested through two components: storm surge and runup. Storm surge is the excess water level due to the wind stress acting over the ocean surface. However, surge magnitudes will also vary based on atmospheric pressure, forward storm speed, angle of shoreline approach, radius of maximum winds, coastal topography/bathymetry, and funneling into narrow water bodies (e.g. Irish and Resio, 2010; Needham and Keim, 2014; Resio et al., 2009). Simplistic approaches relate the surge, S, as (see Russo, 1998)</p>
+<div class="math notranslate nohighlight">
+\[𝑆 = 𝑃𝐵𝐶\]</div>
+<p>where P is a central pressure factor, B is a bathymetry correction factor, and C is a factor to account for hurricane speed and angle with respect to the shoreline. All three factors have additional empirical formulations embedded within. Other relations generate surge with respect to some factor multiplied by the square of the wind speed divided by depth (e.g. WMO, 2011) or develop surge hydrographs as a function of time related to the peak surge elevation at landfall, storm duration, radius of maximum wind and forward speed (e.g. Xu and Huang, 2014). Only the Russo (1998) empirical approach is used for surge in this demonstration.
+Runup, R, is the summation of wave set up and swash motions. Most empirical relations for runup incorporate the Iribarren Number, 𝜉, (Iribarren and Nogales, 1949) sometimes referred to as the surf similarity parameter that relates the beach slope to the offshore wave steepness. Hunt (1959) suggested the normalized runup (by wave height) is a function of <span class="math notranslate nohighlight">\(\xi\)</span> as</p>
+<div class="math notranslate nohighlight">
+\[\frac{R}{H} = K \xi = K \frac{\beta}{\sqrt{H/L}}\]</div>
+<dl>
+<dt>where <span class="math notranslate nohighlight">\(H\)</span> is wave height, <span class="math notranslate nohighlight">\(K\)</span> is a constant, <span class="math notranslate nohighlight">\(\beta\)</span> is the beach slope, and <span class="math notranslate nohighlight">\(L\)</span> is the wave length. The majority of subsequent empirical relations for runup or the 2% runup exceedance, R2%, use the Hunt formula as the root form (e.g. Holman, 1986; Park and Cox, 2016; Stockdon, et al., 2006). It is noted that until recently (Park and Cox, 2016) the Hunt type formulations did not explicitly include beach profile geometry other than beach slope. The Stockdon et al. (2006) equation for runup exceedance is</dt><dd><div class="math notranslate nohighlight">
+\[R_{2\%} = 1.1 \left[ 0.35 \beta (HL)^{0.5} +\frac{(HL(0.563\beta^2+0.004))^{0.5}}{2} \right]\]</div>
+</dd>
+</dl>
+<p>where the wave height and wave length are the deep water values. The equation can be simplified greatly for extremely dissipative conditions (NOT the case at NSN) to</p>
+<div class="math notranslate nohighlight">
+\[R_{2\%} = 0.73\beta(HL)^{0.5}\]</div>
 </div>
 
 
@@ -93,7 +108,7 @@
           <a href="demo.html" title="DEMONSTRATION"
              >next</a> |</li>
         <li class="right" >
-          <a href="guide_xbeach.html" title="XBEACH USERS GUIDE"
+          <a href="guide_xbeach.html" title="XBEACH USERS GUIDE (need update)"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">ESTCP  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="guide.html" ><strong>USER GUIDE</strong></a> &#187;</li> 

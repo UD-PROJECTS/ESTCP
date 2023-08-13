@@ -21,7 +21,7 @@ The figure above shows the computational grid (left) and an example of modeled s
     :figclass: align-right
 
 Recently, a new model coupling system called NearCoM-TVD (Total Variation Diminishing) was developed based on the MPI-based parallel computing framework. NearCoM-TVD couples a nearshore circulation model, SHORECIRC, using a hybrid finite-difference finite-volume TVD- type scheme on a generalized curvilinear grid, the wave model SWAN, and several selectable sediment transport modules (e.g. Kobayashi et al., 2008; Soulsby, 1997; Van Rijn et al., 2011) as shown in Figure 8. NearCoM-TVD is the standard version open to public and maintained in the GITHUB repository. Figure 7 shows the generalized curvilinear grid with the fine grid resolution
-at NSN and an example of modeled surface elevation by an extreme storm event at Norfolk. NearCoM-TVD is an open source code maintained in GITHUB with report (Chen et al., 2014; Shi et al., 2013) and online (WIKI page: https:// fengyanshi.github.io /NEARCOM-TVD /WIKI/ _build/ html/index.html) documentation.
+at NSN and an example of modeled surface elevation by an extreme storm event at Norfolk. NearCoM-TVD is an open source code maintained in GITHUB with report (Chen et al., 2014; Shi et al., 2013) and online `WIKI page: <https://fengyanshi.github.io/NEARCOM-TVD/WIKI/_build/html/index.html>`_) documentation.
 
 `NearCoM Documentation <https://fengyanshi.github.io/NEARCOM-TVD/WIKI/_build/html/index.html>`_
 

@@ -16,10 +16,10 @@ As a nearshore shallow-to-intermediate water Boussinesq-type numerical wave mode
 .. figure:: images/models/funwave_flow.png
     :width: 400px
     :align: center
-    :height: 250px
+    :height: 200px
     :alt: alternate text
     :figclass: align-right
-FUNWAVE-TVD has been benchmarked for wind wave application in a series of the USACE-funded projects, and tsunami application during the National Tsunami Hazard Mitigation Program (NTHMP) which provided the benchmarking standard for judging model acceptance for use in development of coastal inundation maps and evacuation plans. Source code, documentation, and descriptions and input files for carrying out benchmark tests and various example calculations are available at the FUNWAVE-TVD site (https://fengyanshi.github.io/build/html/index.html). In this demonstration plan, FUNWAVE is used to simulate the contribution of wave runup to coastal flooding under hurricane forcing with workflow shown in the figure on the right.
+FUNWAVE-TVD has been benchmarked for wind wave application in a series of the USACE-funded projects, and tsunami application during the National Tsunami Hazard Mitigation Program (NTHMP) which provided the benchmarking standard for judging model acceptance for use in development of coastal inundation maps and evacuation plans. Source code, documentation, and descriptions and input files for carrying out benchmark tests and various example calculations are available at the `FUNWAVE-TVD site <https://fengyanshi.github.io/build/html/index.html>`_. In this demonstration plan, FUNWAVE is used to simulate the contribution of wave runup to coastal flooding under hurricane forcing with workflow shown in the figure on the right.
 
 
 

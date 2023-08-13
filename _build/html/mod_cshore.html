@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>CSHORE &#8212; ESTCP  documentation</title>
+    <link rel="stylesheet" href="_static/lglb-sphinx-doc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="USER GUIDE" href="guide.html" />
+    <link rel="prev" title="XBEACH" href="mod_xbeach.html" /> 
+  </head><body>
+<div class="header">
+ <p class="logo"><a href="https://ud-projects.github.io/ESTCP/_build/html/index.html">
+  <img class="logo" src="_static/../../../images/Delaware.svg" alt="Logo"/>
+ </a></p>
+</div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="guide.html" title="USER GUIDE"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="mod_xbeach.html" title="XBEACH"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">ESTCP  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="models.html" accesskey="U"><strong>BASIC MODEL INFORMATION</strong></a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="mod_xbeach.html"
+                        title="previous chapter">XBEACH</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="guide.html"
+                        title="next chapter"><strong>USER GUIDE</strong></a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/mod_cshore.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="cshore">
+<h1>CSHORE<a class="headerlink" href="#cshore" title="Permalink to this headline">¶</a></h1>
+<div class="align-right figure align-center">
+<a class="reference internal image-reference" href="_images/cshore.png"><img alt="alternate text" src="_images/cshore.png" style="width: 400px; height: 250px;" /></a>
+</div>
+<p>CSHORE is an efficient process-based 1D cross-shore coastal response model. The model includes a time-averaged and depth-averaged combined wave and cross-shore current model, a time-averaged sediment transport model, a probabilistic model for the intermittently wet and dry zone, as well as empirical formulas for irregular wave runup (Johnson et al., 2012; Kobayashi, 2013; Kobayashi et al., 2008a). The model employs a linear wave theory-based model with an assumed Gaussian distribution of the free-surface elevation below mean sea level (MSL) and a model based on the time-averaged continuity and momentum equations derived from nonlinear shallow-water equations above still water level (SWL) to provide hydrodynamic forcing for sediment transport and morphodynamics. Output from both models are averaged in the zone between SWL and MSL to provide smooth results over the entire computation domain. The actual location of SWL and MSL at each time step dictates where along the profile the two models are applied.  CSHORE predicts cross-shore variations of the mean and standard deviation of the free surface elevation, the depth-averaged cross-shore current, the cross-shore velocity standard deviation, the cross-shore bed-load transport rate, and the cross-shore suspended sediment transport rate. The root-mean-square wave height, spectral peak period and setup/setdown with respect to SWL are used as input at the offshore boundary of the computation domain. Only the initial bottom profile elevation is specified for the computation of the entire model run. Since CSHORE is a 1D cross-shore time-averaged model, it is most effective when applied to representative shore locations where bathymetric contours are approximately parallel. Computational efficiency, robustness, and relative accuracy are some of the major advantages of using CSHORE as a tool to predict beach profile changes, runup, overtopping, and overwash (Figlus et al., 2018; Harter and Figlus, 2017).</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="guide.html" title="USER GUIDE"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="mod_xbeach.html" title="XBEACH"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">ESTCP  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="models.html" ><strong>BASIC MODEL INFORMATION</strong></a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2022, ESTCP team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
+    </div>
+  </body>
+</html>

@@ -5,26 +5,37 @@
 
 ESTCP PROJECT
 ===============================================
-
-Objective
-****************************************
  
+.. figure:: images/models/emperical_model.png
+   :width: 410px
+   :height: 150px
+   :align: right  
+
+   Different components of total water level.
+
 .. figure:: images/funwave_norfolk.png
-   :width: 650px
-   :height: 513px
+   :width: 400px
+   :height: 220px
    :align: right
    :target: app_norfork.html
+  
+   Simulation of Harricane Irene (click image for animation)
+ 
 
-This project will compare model predictions of coastal flooding at representative military facilities, with the goal of identifying the best practice for any facility. Unlike previous efforts, this project will consider a suite of open-source numerical models, which include all of the relevant physics that contribute to total water levels, such as sea level rise, tides, wind-induced surge, wave runup, and infragravity motions. Total water levels will be predicted for selected tropical cyclones with varying tracks and intensities, to represent the full range of possible forcings at each location, and at facilities on the U.S. Gulf and Atlantic coasts and in the Pacific Ocean, to represent the full range of coastal geographies. Model performance will be compared with respect to inundation depths, timing and duration of flooding at each installation, as well as computational costs. This comparative assessment will inform the use of these models for predictions of total water levels at any facility, thus enhancing military installation readiness and resilience, in direct support of DoD and ESTCP priorities. 
+.. figure:: images/models/holland.png
+   :width: 400px
+   :height: 250px
+   :align: right  
+
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
 
+   objective
    models
    guide
-   demo
-   applications
+   demo   
+   site
    team
 
 GALLERY
