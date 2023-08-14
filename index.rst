@@ -40,7 +40,7 @@ ESTCP PROJECT
    animation   
    team
 
-SEARCH ON SITE
+SEARCH IN SITE
 ******************
 
 * :ref:`search`
