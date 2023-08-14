@@ -50,7 +50,7 @@
     :align: center
     :height: 140px
     :alt: alternate text
-..    :figclass: align-center
+    :figclass: align-center
 
     Fengyan Shi, University of Delaware
 
