@@ -17,7 +17,7 @@ ESTCP PROJECT
    :width: 400px
    :height: 220px
    :align: right
-   :target: app_norfork.html
+   :target: animation.html
   
    Simulation of Harricane Irene (click image for animation)
  
