@@ -1,2 +1,2 @@
-NEARCOM Demonstration Plan
-****************************
+NEARCOM Demonstration (ONGOING)
+***********************************

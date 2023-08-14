@@ -1,3 +1,3 @@
-FUNWAVE-TVD Demonstration Plan
-***********************************
+FUNWAVE-TVD Demonstration (ONGOING)
+**************************************
 

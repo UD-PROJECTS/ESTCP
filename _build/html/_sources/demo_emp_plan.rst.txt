@@ -1,2 +1,2 @@
-Emperical Model Demonstration Plan
-*************************************
+Emperical Model Demonstration (ONGOING)
+*******************************************

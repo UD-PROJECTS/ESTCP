@@ -1,2 +1,2 @@
-ADCIRC Demonstration Plan
-*****************************
+ADCIRC Demonstration (ONGOING)
+***********************************

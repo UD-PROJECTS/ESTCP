@@ -1,9 +1,8 @@
-.. _section-projects:
 
-**SITES**
+**USER-INTERACT MAP**
 =============================
 
 .. toctree::
    :maxdepth: 2
    
-   app_norfork
+   map_norfolk

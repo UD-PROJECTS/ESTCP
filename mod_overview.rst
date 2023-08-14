@@ -14,10 +14,10 @@ Model Classes
 
 TWLs will be predicted using a suite of simulation models from simple, low-cost empirical to complex, high cost (computation and effort) physics-based. Table 1 provides the proposed list and technical aspects of the models. The modeling approaches can be grouped into three classes. Class I includes empirical approaches that focus on simplified equations for storm surge (Russo, 1998) and runup (Stockdon, et al., 2006). Class II includes (coupled) process-based numerical models such as ADCIRC (Dietrich et al., 2011b; Luettich and Westerink, 2004), NearCoM (Shi et al., 2013) and Delft3D (Lesser et al., 2004). The models are essentially based on the Nonlinear Shallow Water Equations (NSWE) and resolve tides, surges, and statistical wave conditions. The models are dynamically coupled to spectral wave models such as SWAN (e.g. Sebastian et al., 2014). These models (except ADCIRC) have morphodynamics modules to compute sediment transport and bed level changes. Class III includes dynamical wave models that resolve the waves. The model used here is called FUNWAVE-TVD (Shi et al., 2012). The model is computationally demanding and can include morphological change. Class III models predict the effects of incident sea and swell (SS), IG, and very low frequency (VLF) waves on TWL (Gawehn et al., 2016); processes largely ignored in past efforts.
 
-.. figure:: images/models/overview.png
+.. figure:: images/models/table1.png
     :width: 600px
     :align: center
-    :height: 800px
+    :height: 600px
     :alt: alternate text
     :figclass: align-center
 

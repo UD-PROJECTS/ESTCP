@@ -34,8 +34,10 @@ ESTCP PROJECT
    objective
    models
    guide
-   demo   
    site
+   map
+   demo
+   animation   
    team
 
 GALLERY

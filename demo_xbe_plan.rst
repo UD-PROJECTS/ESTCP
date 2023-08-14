@@ -1,2 +1,2 @@
-XBEACH Demonstration Plan
-****************************
+XBEACH Demonstration (ONGOING)
+*************************************
