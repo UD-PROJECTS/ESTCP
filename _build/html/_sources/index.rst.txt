@@ -3,8 +3,11 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-ESTCP PROJECT
-===============================================
+ESTCP PROJECT: 
+=================================================================
+
+**Comparative Assessment of Total Water Levels for Coastal Military Facility Readiness and Resilience using Numerical Models**
+
  
 .. figure:: images/models/emperical_model.png
    :width: 410px
