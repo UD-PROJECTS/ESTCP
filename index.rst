@@ -40,5 +40,9 @@ ESTCP PROJECT
    animation   
    team
 
-GALLERY
-==================
+Indices and tables
+******************
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
