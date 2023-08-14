@@ -39,6 +39,7 @@ ESTCP PROJECT
    demo
    animation   
    team
+   publication
 
 SEARCH IN SITE
 ******************
