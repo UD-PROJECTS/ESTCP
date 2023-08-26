@@ -1,5 +1,5 @@
 **ABOUT**
-*********************
+************************************
 
 .. figure:: images/models/all_models.png
    :width: 400px

@@ -1,5 +1,5 @@
 
-EMPERICAL MODEL DEMO
+EMPIRICAL MODEL DEMO
 ========================
 
 .. toctree::

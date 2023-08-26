@@ -1,5 +1,5 @@
 
-EMPERICAL MODEL USERS GUIDE
+EMPIRICAL MODEL USERS GUIDE
 ######################################
 
 Empirical models for components of TWL are largely data-driven or based on machine learning (e.g. Pearson et al., 2017; Suanez et al., 2016; Tadesse et al., 2020). The empiricism is generally manifested through two components: storm surge and runup. Storm surge is the excess water level due to the wind stress acting over the ocean surface. However, surge magnitudes will also vary based on atmospheric pressure, forward storm speed, angle of shoreline approach, radius of maximum winds, coastal topography/bathymetry, and funneling into narrow water bodies (e.g. Irish and Resio, 2010; Needham and Keim, 2014; Resio et al., 2009). Simplistic approaches relate the surge, S, as (see Russo, 1998).. math:: 𝑆 = 𝑃𝐵𝐶

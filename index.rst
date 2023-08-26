@@ -35,6 +35,7 @@ ESTCP PROJECT:
    :maxdepth: 2
 
    objective
+   how
    models
    guide
    site
@@ -43,6 +44,8 @@ ESTCP PROJECT:
    animation   
    team
    publication
+   media
+   website
 
 SEARCH IN SITE
 ******************
