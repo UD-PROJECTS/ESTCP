@@ -41,6 +41,7 @@ ESTCP PROJECT:
    site
    map
    demo
+   recommendation
    animation   
    team
    publication
