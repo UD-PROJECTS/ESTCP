@@ -1,18 +1,17 @@
-
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en" data-content_root="./">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <title>Parameters &#8212; ESTCP  documentation</title>
-    <link rel="stylesheet" href="_static/lglb-sphinx-doc.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/language_data.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=649a27d8" />
+    <link rel="stylesheet" type="text/css" href="_static/lglb-sphinx-doc.css?v=89a288d6" />
+    <script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="POST-PROCESSING" href="guide_fun_post.html" />
@@ -24,7 +23,7 @@
  </a></p>
 </div>
 
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related" role="navigation" aria-label="Related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -40,25 +39,32 @@
           <li class="nav-item nav-item-1"><a href="guide.html" ><strong>USER GUIDE</strong></a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="guide_funwave.html" >FUNWAVE USERS GUIDE</a> &#187;</li>
           <li class="nav-item nav-item-3"><a href="guide_fun_setup.html" >FUNWAVE-TVD SETUP</a> &#187;</li>
-          <li class="nav-item nav-item-4"><a href="guide_fun_setup_para.html" accesskey="U">Model Parameters</a> &#187;</li> 
+          <li class="nav-item nav-item-4"><a href="guide_fun_setup_para.html" accesskey="U">Model Parameters</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Parameters</a></li> 
       </ul>
     </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="index.html">Table of Contents</a></h3>
-  <ul>
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
 <li><a class="reference internal" href="#">Parameters</a></li>
 <li><a class="reference internal" href="#input-txt">INPUT.txt</a></li>
 <li><a class="reference internal" href="#definitions">Definitions</a></li>
 <li><a class="reference internal" href="#simulation-checklist">Simulation checklist</a></li>
 </ul>
 
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="guide_fun_setup_para.html"
-                        title="previous chapter">Model Parameters</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="guide_fun_post.html"
-                        title="next chapter">POST-PROCESSING</a></p>
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="guide_fun_setup_para.html"
+                          title="previous chapter">Model Parameters</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="guide_fun_post.html"
+                          title="next chapter">POST-PROCESSING</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -66,16 +72,16 @@
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
-<div id="searchbox" style="display: none" role="search">
+<search id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
 
@@ -84,18 +90,18 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="parameters">
-<h1>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h1>
+  <section id="parameters">
+<h1>Parameters<a class="headerlink" href="#parameters" title="Link to this heading">¶</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Examples of model setup are provided in the downloaded package (simpe example folder). If you are a beginner, we strongly suggest trying those examples first and find an example similar to your case. Introduction to those examples can be found at <a class="reference external" href="examples.html">Simple tests</a>.</p>
 </div>
 <p>In this section, we will describe the structure of the “input.txt” file and the input parameters required for each module available in FUNWAVE. Each example in the <code class="code docutils literal notranslate"><span class="pre">/simple_cases/</span></code> folder of the downloaded package has a version of the “input.txt” file that is unique to that example. You can refer to the “input.txt” file for each example when reviewing the definitions of parameters described here.</p>
 <p>In addition, you will need to create the unique executable needed to run the specific example. This executable is created by the “Makefile”. In some cases, multiple examples can be run from the same executable so long as the appropriate flags pertaining to the example are active in the “Makefile”. To learn more about makefiles and running FUNWAVE, review the Model Download and Setup page.</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="input-txt">
-<h1>INPUT.txt<a class="headerlink" href="#input-txt" title="Permalink to this headline">¶</a></h1>
+<section id="input-txt">
+<h1>INPUT.txt<a class="headerlink" href="#input-txt" title="Link to this heading">¶</a></h1>
 <p>An example “input.txt” file is presented below. This file is from the Waves on 1D Slope example, located in <code class="code docutils literal notranslate"><span class="pre">/simple_cases/surface_wave_1d/input_files</span></code>. The input file is divided into sections with dashes, where lines with “!” are comments. Brief descriptions of the parameters are listed in each section. Most model parameters are specified in “input.txt”, except the parameters specific to a particular module. There parameters will be added to “input.txt”. Take a moment to familiarize yourself with the basic structure of the FUNWAVE input file. A comprehensive description of all parameters can be found below.</p>
 <div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>! INPUT FILE FOR FUNWAVE_TVD
 ! NOTE: all input parameter are capital sensitive
@@ -238,10 +244,10 @@
  WaveHeight = T
 </pre></div>
 </div>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="definitions">
-<h1>Definitions<a class="headerlink" href="#definitions" title="Permalink to this headline">¶</a></h1>
+<section id="definitions">
+<h1>Definitions<a class="headerlink" href="#definitions" title="Link to this heading">¶</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>All parameter names are case sensitive.</p>
@@ -485,10 +491,10 @@ ENDDO
 <li><p><code class="code docutils literal notranslate"><span class="pre">AMP</span></code>: amplitude (m) of initial <span class="math notranslate nohighlight">\(\eta\)</span>, if <code class="code docutils literal notranslate"><span class="pre">WAVEMAKER</span> <span class="pre">=</span> <span class="pre">INI_REC,</span> <span class="pre">WAVEMAKER</span> <span class="pre">=</span> <span class="pre">INI_SOL,</span> <span class="pre">WAVEMAKER</span> <span class="pre">=</span> <span class="pre">LEF_SOL</span></code>.</p></li>
 <li><p><code class="code docutils literal notranslate"><span class="pre">DEP</span></code>: water depth at wavemaker location, if <code class="code docutils literal notranslate"><span class="pre">WAVEMAKER</span> <span class="pre">=</span> <span class="pre">INI_SOL,</span> <span class="pre">WAVEMAKER</span> <span class="pre">=</span> <span class="pre">LEF_SOL</span></code>.</p></li>
 <li><p><code class="code docutils literal notranslate"><span class="pre">LAGTIME</span></code>, time lag (s) for the solitary wave generated on the left boundary, e.g., <code class="code docutils literal notranslate"><span class="pre">WAVEMAKER</span> <span class="pre">=</span> <span class="pre">LEF_SOL</span></code>.</p></li>
-<li><p><code class="code docutils literal notranslate"><span class="pre">XWAVEMAKER</span></code>: x (m) coordinate for <code class="code docutils literal notranslate"><span class="pre">WAVEMAKER</span> <span class="pre">=</span> <span class="pre">INI\_SOL</span></code>.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">XWAVEMAKER</span></code>: x (m) coordinate for <code class="code docutils literal notranslate"><span class="pre">WAVEMAKER</span> <span class="pre">=</span> <span class="pre">INI_SOL</span></code>.</p></li>
 <li><p><code class="code docutils literal notranslate"><span class="pre">Xc</span></code>: x (m) coordinate of the center of  a rectangular hump if <code class="code docutils literal notranslate"><span class="pre">WAVEMAKER</span> <span class="pre">=</span> <span class="pre">INI_REC</span></code>.</p></li>
 <li><p><code class="code docutils literal notranslate"><span class="pre">Yc</span></code>: y (m) coordinate of the center of  a rectangular hump if <code class="code docutils literal notranslate"><span class="pre">WAVEMAKER</span> <span class="pre">=</span> <span class="pre">INI_REC</span></code>.</p></li>
-<li><p><code class="code docutils literal notranslate"><span class="pre">WID</span></code>: width (m) of  a rectangular hump if <code class="code docutils literal notranslate"><span class="pre">WAVEMAKER</span> <span class="pre">=</span> <span class="pre">INI\_REC,</span> <span class="pre">or</span> <span class="pre">INI\_GAU</span></code>.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">WID</span></code>: width (m) of  a rectangular hump if <code class="code docutils literal notranslate"><span class="pre">WAVEMAKER</span> <span class="pre">=</span> <span class="pre">INI_REC,</span> <span class="pre">or</span> <span class="pre">INI_GAU</span></code>.</p></li>
 <li><p><code class="code docutils literal notranslate"><span class="pre">Time_ramp</span></code>: time ramp (s) for Wei and Kirby (1999) wavemaker. Default: 0.0.</p></li>
 <li><p><code class="code docutils literal notranslate"><span class="pre">Delta_WK</span></code>: width parameter <span class="math notranslate nohighlight">\(\delta\)</span>  for Wei and Kirby (1999) wavemaker.    Need trial and error, usually, <span class="math notranslate nohighlight">\(\delta\)</span> =  <span class="math notranslate nohighlight">\(1.0 \sim 3.0\)</span>.</p></li>
 <li><p><code class="code docutils literal notranslate"><span class="pre">DEP_WK</span></code>: water depth (m) for Wei and Kirby (1999) wavemaker.</p></li>
@@ -586,9 +592,9 @@ ENDDO
 <li><p><code class="code docutils literal notranslate"><span class="pre">UNDERTOW</span></code>: logical parameter for output of undertow. T or F.</p></li>
 <li><p><code class="code docutils literal notranslate"><span class="pre">OUT_NU</span></code>: logical parameter for output of breaking location. T or F.</p></li>
 </ul>
-</div>
-<div class="section" id="simulation-checklist">
-<h1>Simulation checklist<a class="headerlink" href="#simulation-checklist" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="simulation-checklist">
+<h1>Simulation checklist<a class="headerlink" href="#simulation-checklist" title="Link to this heading">¶</a></h1>
 <p>After the FUNWAVE-TVD model has been downloaded and compiled on either your local machine or remote computing environment (e.g., HPC or AWS Cloud), and you’ve familiarized yourself with the examples in the model repository, you’re ready to begin running numerical wave simulations for your application. If you haven’t yet downloaded and compiled the model, follow the instructions the download page.</p>
 <p>Below is a simple checklist to review before hitting “go” on a simulation. This checklist was designed to reduce the probability of experiencing an error when initiating a new simulation; however, it is not comprehensive of all possible input parameters and input file conditions for all applications.</p>
 <ol class="arabic simple">
@@ -602,15 +608,16 @@ ENDDO
 <li><p>If transferring files from a Windows to a Linux machine (in an HPC environment, for example), run <code class="code docutils literal notranslate"><span class="pre">dos2unix</span> <span class="pre">[filename]</span></code> on input files to eliminate any possible Windows return characters (^M) at the end of a line.</p></li>
 </ol>
 <p>If you have experience with running many FUNWAVE-TVD simulations and have recommendations to add to this simple checklist with respect to the Central, Vessel, Sediment, or Meteo modules, please send an email the FUNWAVE user group with the subject “Checklist Recommendations”. We will consider your recommendations and include them on the Wiki as appropriate. We appreciate your support and engagement as the modeling community and the model itself continues to evolve and grow.</p>
-</div>
+</section>
 
 
+            <div class="clearer"></div>
           </div>
         </div>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related" role="navigation" aria-label="Related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -626,12 +633,13 @@ ENDDO
           <li class="nav-item nav-item-1"><a href="guide.html" ><strong>USER GUIDE</strong></a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="guide_funwave.html" >FUNWAVE USERS GUIDE</a> &#187;</li>
           <li class="nav-item nav-item-3"><a href="guide_fun_setup.html" >FUNWAVE-TVD SETUP</a> &#187;</li>
-          <li class="nav-item nav-item-4"><a href="guide_fun_setup_para.html" >Model Parameters</a> &#187;</li> 
+          <li class="nav-item nav-item-4"><a href="guide_fun_setup_para.html" >Model Parameters</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Parameters</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2022, ESTCP team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
+    &#169; Copyright 2022, ESTCP team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.4.7.
     </div>
   </body>
 </html>

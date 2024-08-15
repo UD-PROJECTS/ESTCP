@@ -1,18 +1,17 @@
-
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en" data-content_root="./">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <title>SHORECIRC equations &#8212; ESTCP  documentation</title>
-    <link rel="stylesheet" href="_static/lglb-sphinx-doc.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/language_data.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=649a27d8" />
+    <link rel="stylesheet" type="text/css" href="_static/lglb-sphinx-doc.css?v=89a288d6" />
+    <script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Flow chart" href="guide_nea_basic_flow.html" />
@@ -24,7 +23,7 @@
  </a></p>
 </div>
 
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related" role="navigation" aria-label="Related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -39,13 +38,15 @@
         <li class="nav-item nav-item-0"><a href="index.html">ESTCP  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="guide.html" ><strong>USER GUIDE</strong></a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="guide_nearcom.html" >NEARCOM USERS GUIDE</a> &#187;</li>
-          <li class="nav-item nav-item-3"><a href="guide_nea_basic.html" accesskey="U">NEARCOM BASICS</a> &#187;</li> 
+          <li class="nav-item nav-item-3"><a href="guide_nea_basic.html" accesskey="U">NEARCOM BASICS</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">SHORECIRC equations</a></li> 
       </ul>
     </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="index.html">Table of Contents</a></h3>
-  <ul>
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
 <li><a class="reference internal" href="#">SHORECIRC equations</a></li>
 <li><a class="reference internal" href="#swan-equations">SWAN equations</a></li>
 <li><a class="reference internal" href="#soulsby-s-sediment-transport-formula">Soulsby’s sediment transport formula</a></li>
@@ -53,12 +54,17 @@
 <li><a class="reference internal" href="#seabed-evolution-equation">Seabed evolution equation</a></li>
 </ul>
 
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="guide_nea_basic.html"
-                        title="previous chapter">NEARCOM BASICS</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="guide_nea_basic_flow.html"
-                        title="next chapter">Flow chart</a></p>
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="guide_nea_basic.html"
+                          title="previous chapter">NEARCOM BASICS</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="guide_nea_basic_flow.html"
+                          title="next chapter">Flow chart</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -66,16 +72,16 @@
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
-<div id="searchbox" style="display: none" role="search">
+<search id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
 
@@ -84,8 +90,8 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="shorecirc-equations">
-<h1>SHORECIRC equations<a class="headerlink" href="#shorecirc-equations" title="Permalink to this headline">¶</a></h1>
+  <section id="shorecirc-equations">
+<h1>SHORECIRC equations<a class="headerlink" href="#shorecirc-equations" title="Link to this heading">¶</a></h1>
 <p>SHORECIRC is a quasi-3D nearshore circulation model for prediction of wave-induced nearshore circulation.
 It is a 2D horizontal model which incorporates the effect of the vertical structure of horizontal flows.
 In Putrevu and Svendsen (1999), the instantaneous horizontal velocity is split as</p>
@@ -97,7 +103,7 @@ The complete SHORECIRC equations can be expressed in the Cartesian form as in Sv
 <div class="math notranslate nohighlight">
 \[\frac{\partial \eta}{\partial t}+\frac{\partial Hu_\alpha}{\partial x_\alpha} =0\]</div>
 <div class="math notranslate nohighlight" id="equation-euler">
-<span class="eqno">(1)<a class="headerlink" href="#equation-euler" title="Permalink to this equation">¶</a></span>\[\frac{\partial H u_\alpha}{\partial t} + \frac{Hu_\alpha u_\beta}{\partial x_\beta} +f_{\alpha}+ g H \frac{\partial \eta}{\partial x_\alpha} + \frac{1}{\rho} \frac{\partial T_{\alpha \beta}}{\partial x_\beta} + \frac{1}{\rho} \frac{\partial S_{\alpha \beta}}{\partial x_\beta}  + \frac{\tau^b_\alpha}{\rho} - \frac{\tau^s_\alpha}{\rho} + \mbox{ROT}= 0\]</div>
+<span class="eqno">(1)<a class="headerlink" href="#equation-euler" title="Link to this equation">¶</a></span>\[\frac{\partial H u_\alpha}{\partial t} + \frac{Hu_\alpha u_\beta}{\partial x_\beta} +f_{\alpha}+ g H \frac{\partial \eta}{\partial x_\alpha} + \frac{1}{\rho} \frac{\partial T_{\alpha \beta}}{\partial x_\beta} + \frac{1}{\rho} \frac{\partial S_{\alpha \beta}}{\partial x_\beta}  + \frac{\tau^b_\alpha}{\rho} - \frac{\tau^s_\alpha}{\rho} + \mbox{ROT}= 0\]</div>
 <p>where <span class="math notranslate nohighlight">\(\eta\)</span> represents the wave-averaged surface elevation, <span class="math notranslate nohighlight">\(H = \eta + h\)</span>, in which <span class="math notranslate nohighlight">\(h\)</span> is still water depth. The depth-averaged and wave-averaged velocity <span class="math notranslate nohighlight">\(u_\alpha\)</span> is defined by the ‘Lagrangian’ averaging as</p>
 <div class="math notranslate nohighlight">
 \[u_{\alpha} = \frac{1}{H} \overline{\int_{-h}^\zeta u^{ins}_\alpha}\]</div>
@@ -122,18 +128,18 @@ The relation between the Cartesian component <span class="math notranslate nohig
 \[L^\alpha_\beta = \frac{\partial \xi^\alpha}{\partial x_\beta}\]</div>
 <p>Using the chain rule, the derivative of a function <span class="math notranslate nohighlight">\(F\)</span> with respect to <span class="math notranslate nohighlight">\(x_\alpha\)</span> in the Cartesian coordinates can be expressed in the curvilinear coordinates <span class="math notranslate nohighlight">\(\xi^\alpha\)</span> by</p>
 <div class="math notranslate nohighlight" id="equation-der">
-<span class="eqno">(2)<a class="headerlink" href="#equation-der" title="Permalink to this equation">¶</a></span>\[\frac{\partial F}{\partial x_\alpha} = L^\beta_\alpha \frac{\partial F}{\partial \xi^\beta}\]</div>
+<span class="eqno">(2)<a class="headerlink" href="#equation-der" title="Link to this equation">¶</a></span>\[\frac{\partial F}{\partial x_\alpha} = L^\beta_\alpha \frac{\partial F}{\partial \xi^\beta}\]</div>
 <p>Using the metric identity law (Thompson et al., 1985):</p>
 <div class="math notranslate nohighlight">
 \[\frac{\partial}{\partial \xi^\alpha}(J L^\alpha_\beta) \equiv 0\]</div>
 <p><a class="reference internal" href="#equation-der">(2)</a> can be rewritten in a different form as</p>
 <div class="math notranslate nohighlight" id="equation-der2">
-<span class="eqno">(3)<a class="headerlink" href="#equation-der2" title="Permalink to this equation">¶</a></span>\[\frac{\partial F}{\partial x_\alpha} = \frac{1}{J} \frac{\partial F J L^\beta_\alpha}{\partial \xi^\beta}\]</div>
+<span class="eqno">(3)<a class="headerlink" href="#equation-der2" title="Link to this equation">¶</a></span>\[\frac{\partial F}{\partial x_\alpha} = \frac{1}{J} \frac{\partial F J L^\beta_\alpha}{\partial \xi^\beta}\]</div>
 <p>Using <a class="reference internal" href="#equation-der2">(3)</a>, the conservative form of SHORECIRC equations in curvilinear coordinates can be derived as</p>
 <div class="math notranslate nohighlight" id="equation-mass1">
-<span class="eqno">(4)<a class="headerlink" href="#equation-mass1" title="Permalink to this equation">¶</a></span>\[frac{\partial \eta}{\partial t} + \frac{1}{J}\frac{\partial J P^\alpha}{\partial \xi^\alpha} = 0\]</div>
+<span class="eqno">(4)<a class="headerlink" href="#equation-mass1" title="Link to this equation">¶</a></span>\[frac{\partial \eta}{\partial t} + \frac{1}{J}\frac{\partial J P^\alpha}{\partial \xi^\alpha} = 0\]</div>
 <div class="math notranslate nohighlight" id="equation-conserv1">
-<span class="eqno">(5)<a class="headerlink" href="#equation-conserv1" title="Permalink to this equation">¶</a></span>\[\begin{split}&amp; \frac{\partial Hu_\alpha}{\partial t} + \frac{1}{J} \frac{\partial }{\partial \xi^\beta} \left[ JP^\beta u_\alpha  +\frac{1}{2} g (\eta^2 +2 \eta h)  J L^\beta_\alpha \right] +f_\alpha -  g \eta \frac{1}{J}  \frac{\partial }{\partial \xi^\beta} (h J L^\beta_\alpha) \\
+<span class="eqno">(5)<a class="headerlink" href="#equation-conserv1" title="Link to this equation">¶</a></span>\[\begin{split}&amp; \frac{\partial Hu_\alpha}{\partial t} + \frac{1}{J} \frac{\partial }{\partial \xi^\beta} \left[ JP^\beta u_\alpha  +\frac{1}{2} g (\eta^2 +2 \eta h)  J L^\beta_\alpha \right] +f_\alpha -  g \eta \frac{1}{J}  \frac{\partial }{\partial \xi^\beta} (h J L^\beta_\alpha) \\
        &amp; + \frac{1}{\rho} \frac{1}{J}  \frac{\partial }{\partial \xi^\gamma} (S_{\alpha \beta} J L^\gamma_\beta) + \frac{1}{J}  \frac{\partial }{\partial \xi^\gamma} (\tau_{\alpha \beta} JHL^\gamma_\beta)+ \frac{\tau^b_\alpha}{\rho} - \frac{\tau^s_\alpha}{\rho} + \mbox{ROT} = 0\end{split}\]</div>
 <p>Note that  equations <a class="reference internal" href="#equation-mass1">(4)</a> and <a class="reference internal" href="#equation-conserv1">(5)</a> contain both the Cartesian and contravariant variables, which are different from the contravariant-only form in Shi et al., (2003).
 A difficulty in deriving the conservative form of the momentum equations using contravariant-only variables has be noticed by several authors (e.g., xxx) in shallow water applications.
@@ -160,24 +166,24 @@ For the bottom stress in SHORECRC, we adopted the formulation for wave-averaged 
 <p>where <span class="math notranslate nohighlight">\(U_{w \alpha}\)</span> is the amplitude of short-wave particle velocity evaluated at the bottom using wave bulk parameters, <span class="math notranslate nohighlight">\(f_{cw}\)</span> is the friction factor, <span class="math notranslate nohighlight">\(u_{b\alpha}\)</span> is the current velocity at the bottom obtained from the theoretical solution of the equation for the vertical variation, <span class="math notranslate nohighlight">\(\beta_1\)</span> and <span class="math notranslate nohighlight">\(\beta_2\)</span> are  the weight factors for the current and wave motion given by Svendsen and Putrevu (1990) and evaluated using  linear wave theory.</p>
 <p>The equation governing the vertical structure of horizontal velocity can be solved analytically using the lowest order of the equation for vertical variation of current:</p>
 <div class="math notranslate nohighlight" id="equation-vertical">
-<span class="eqno">(6)<a class="headerlink" href="#equation-vertical" title="Permalink to this equation">¶</a></span>\[\frac{\partial u_{1\alpha}}{\partial t} -\frac{\partial }{\partial z} \left( \nu_t \frac{\partial u_{1\alpha}}{\partial z}\right) = F_\alpha\]</div>
+<span class="eqno">(6)<a class="headerlink" href="#equation-vertical" title="Link to this equation">¶</a></span>\[\frac{\partial u_{1\alpha}}{\partial t} -\frac{\partial }{\partial z} \left( \nu_t \frac{\partial u_{1\alpha}}{\partial z}\right) = F_\alpha\]</div>
 <p>where <span class="math notranslate nohighlight">\(\nu_t\)</span> is the eddy viscosity coefficient; and <span class="math notranslate nohighlight">\(F_\alpha\)</span> is a general form of the local forcing described as</p>
 <div class="math notranslate nohighlight" id="equation-f1">
-<span class="eqno">(7)<a class="headerlink" href="#equation-f1" title="Permalink to this equation">¶</a></span>\[F_\alpha = \frac{1}{\rho h} f_{w\alpha} - f^{lrad}_\alpha + \frac{\tau^b_\alpha}{\rho h} - \frac{\tau^s_\alpha}{\rho h}\]</div>
+<span class="eqno">(7)<a class="headerlink" href="#equation-f1" title="Link to this equation">¶</a></span>\[F_\alpha = \frac{1}{\rho h} f_{w\alpha} - f^{lrad}_\alpha + \frac{\tau^b_\alpha}{\rho h} - \frac{\tau^s_\alpha}{\rho h}\]</div>
 <p>where <span class="math notranslate nohighlight">\(f_\alpha^{lrad}\)</span> represents the local radiation stress defined by Putrevu and Svendsen (1999). In the offshore domain without wave forcing, <a class="reference internal" href="#equation-f1">(7)</a> reduces to</p>
 <div class="math notranslate nohighlight" id="equation-f2">
-<span class="eqno">(8)<a class="headerlink" href="#equation-f2" title="Permalink to this equation">¶</a></span>\[F^\alpha =  \frac{\tau^b_\alpha}{\rho h} - \frac{\tau^s_\alpha}{\rho h}\]</div>
+<span class="eqno">(8)<a class="headerlink" href="#equation-f2" title="Link to this equation">¶</a></span>\[F^\alpha =  \frac{\tau^b_\alpha}{\rho h} - \frac{\tau^s_\alpha}{\rho h}\]</div>
 <p>The solution of equation <a class="reference internal" href="#equation-vertical">(6)</a> can be solved analytically following Putrevu and Svendsen (1999).
 The bottom current velocity <span class="math notranslate nohighlight">\(u_{b \alpha}\)</span> can be evaluated using <span class="math notranslate nohighlight">\(u_\alpha\)</span> and <span class="math notranslate nohighlight">\(u_{1\alpha}\)</span> at bottom:</p>
 <div class="math notranslate nohighlight">
 \[u_{b \alpha} = u_\alpha + u_{1\alpha} (z=-h)\]</div>
-</div>
-<div class="section" id="swan-equations">
-<h1>SWAN equations<a class="headerlink" href="#swan-equations" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="swan-equations">
+<h1>SWAN equations<a class="headerlink" href="#swan-equations" title="Link to this heading">¶</a></h1>
 <p>In this section, we briefly summarize equations used in SWAN. Detailed documentation is referred to SWAN Users’ Manual at <a class="reference external" href="http://swanmodel.sourceforge.net/">http://swanmodel.sourceforge.net/</a>.</p>
 <p>The spectral wave model SWAN (Booij et al., 1999, Ris et al., 1999) solves the wave action balance equation. In generalized curvilinear coordinates, the governing equation reads</p>
 <div class="math notranslate nohighlight" id="equation-eq-action">
-<span class="eqno">(9)<a class="headerlink" href="#equation-eq-action" title="Permalink to this equation">¶</a></span>\[\frac{\partial N}{\partial t} + \frac{1}{J}\frac{\partial (JC_g^\alpha)}{\partial \xi_\alpha} + \frac{\partial (C_{g\sigma}N)}{\partial \sigma} + \frac{\partial (C_{g\theta}N)}{\partial \theta} = \frac{S}{\sigma}\]</div>
+<span class="eqno">(9)<a class="headerlink" href="#equation-eq-action" title="Link to this equation">¶</a></span>\[\frac{\partial N}{\partial t} + \frac{1}{J}\frac{\partial (JC_g^\alpha)}{\partial \xi_\alpha} + \frac{\partial (C_{g\sigma}N)}{\partial \sigma} + \frac{\partial (C_{g\theta}N)}{\partial \theta} = \frac{S}{\sigma}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\xi_\alpha\)</span> represents curvilinear coordinates defined as the same as in the curvilinear SHORECIRC equations;
 <span class="math notranslate nohighlight">\(\sigma\)</span> is the relative angular frequency; <span class="math notranslate nohighlight">\(\theta\)</span> is propagation direction of each wave component; <span class="math notranslate nohighlight">\(C_g^\alpha\)</span> represents contravariant component of the energy propagation speed  which can be obtained using coordinate transformation:</p>
 <div class="math notranslate nohighlight">
@@ -201,9 +207,9 @@ Equation <a class="reference internal" href="#equation-eq-action">(9)</a> is wri
 <div class="math notranslate nohighlight">
 \[C_\theta = - \frac{1}{k} \left( \frac{\partial \sigma}{\partial d} \frac{\partial d}{\partial m} +\bf{k}\cdot \frac{\partial {\bf u_E} }{\partial  {\it m} } \right)\]</div>
 <p>where <span class="math notranslate nohighlight">\(s\)</span> is the space coordinate in direction <span class="math notranslate nohighlight">\(\theta\)</span> and <span class="math notranslate nohighlight">\(m\)</span> is a coordinate normal to <span class="math notranslate nohighlight">\(s\)</span>.</p>
-</div>
-<div class="section" id="soulsby-s-sediment-transport-formula">
-<h1>Soulsby’s sediment transport formula<a class="headerlink" href="#soulsby-s-sediment-transport-formula" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="soulsby-s-sediment-transport-formula">
+<h1>Soulsby’s sediment transport formula<a class="headerlink" href="#soulsby-s-sediment-transport-formula" title="Link to this heading">¶</a></h1>
 <p>The total load transport by waves plus currents derived by  Soulsby’s (1997) can be written as</p>
 <div class="math notranslate nohighlight">
 \[q_\alpha = A_s z u_\alpha \left[  \left( u_\alpha^2 + \frac{0.018}{C_d} u_{rms}^2 \right)^{1/2} - u_\alpha^{cr} \right]^{2.4} (1-1.6\tan \beta)\]</div>
@@ -217,9 +223,9 @@ Equation <a class="reference internal" href="#equation-eq-action">(9)</a> is wri
 <p><span class="math notranslate nohighlight">\(u_{rms}\)</span> is root-mean-square wave orbital velocity; <span class="math notranslate nohighlight">\(C_d\)</span> is drag coefficient due to current alone; <span class="math notranslate nohighlight">\(u_\alpha^{cr}\)</span> represents threshold current velocity given by Van Rijn (1984); <span class="math notranslate nohighlight">\(\beta\)</span> is the slope of bed in streamwise direction; <span class="math notranslate nohighlight">\(s\)</span> is the specific gravity; and</p>
 <div class="math notranslate nohighlight">
 \[D_* = \left[ \frac{g(s-1)}{\nu} \right]^{1/3} d_{50}\]</div>
-</div>
-<div class="section" id="kobayashi-s-sediment-transport-formula">
-<h1>Kobayashi’s sediment transport formula<a class="headerlink" href="#kobayashi-s-sediment-transport-formula" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="kobayashi-s-sediment-transport-formula">
+<h1>Kobayashi’s sediment transport formula<a class="headerlink" href="#kobayashi-s-sediment-transport-formula" title="Link to this heading">¶</a></h1>
 <p>Kobayashi et al. (2007) recently proposed sediment transport formulas for the cross-shore and longshore transport rates of suspended sand and bedload on beaches based on laboratory experiment and field data.
 For suspended sand, the suspended sediment volume <span class="math notranslate nohighlight">\(V_s\)</span> per unit horizontal bottom area was introduced as</p>
 <div class="math notranslate nohighlight">
@@ -228,7 +234,7 @@ For suspended sand, the suspended sediment volume <span class="math notranslate 
 <span class="math notranslate nohighlight">\(w_f\)</span> is the sediment fall velocity; <span class="math notranslate nohighlight">\(P_s\)</span> is the probability of sediment suspension formulated in Kobayashi et al. (2007).
 The corresponding cross-shore and alongshore suspended sediment transport rates may be expressed as</p>
 <div class="math notranslate nohighlight" id="equation-qs">
-<span class="eqno">(10)<a class="headerlink" href="#equation-qs" title="Permalink to this equation">¶</a></span>\[q_{sc} = a \bar{U}_c V_s; \ \ \ \ \ \ q_{sl} = \bar{V}_l V_s\]</div>
+<span class="eqno">(10)<a class="headerlink" href="#equation-qs" title="Link to this equation">¶</a></span>\[q_{sc} = a \bar{U}_c V_s; \ \ \ \ \ \ q_{sl} = \bar{V}_l V_s\]</div>
 <p>where <span class="math notranslate nohighlight">\(a\)</span> is empirical suspended load parameter; <span class="math notranslate nohighlight">\(\bar{U}_c\)</span> is the Eulerian-mean cross-shore current which consists of wave-induced return flow (undertow) and tidal current in the cross-shore direction; <span class="math notranslate nohighlight">\(\bar{V}_c\)</span> is alongshore current which includes wave-induced alongshore current and tidal current in the alongshore direction.
 Subscriptions <span class="math notranslate nohighlight">\(c\)</span> and <span class="math notranslate nohighlight">\(l\)</span> represent cross-shore and longshore, respectively (hereafter).</p>
 <p>In Kobayashi et al., the vector (<span class="math notranslate nohighlight">\(\bar{U}_c, \bar{V}_l\)</span>) is defined specifically in cross-shore/alongshore directions which may not be appropriate for general 2-D applications, especially for complex coastal geometry.
@@ -239,10 +245,13 @@ Thus formula <a class="reference internal" href="#equation-qs">(10)</a> can be w
 <div class="math notranslate nohighlight">
 \[q_{sy} = (a \bar{V} \sin^2 \alpha + a \bar{U} \sin \alpha \cos \alpha + \bar{V} \cos^2 \alpha -\bar{U}\sin \alpha \cos \alpha) V_s\]</div>
 <p>in which <span class="math notranslate nohighlight">\(\alpha\)</span> is an angle between <span class="math notranslate nohighlight">\(x-\)</span> axis and beach-normal direction as shown in the figure below.</p>
-<div class="figure align-center" id="beach-angle">
-<a class="reference internal image-reference" href="_images/beach_direction.jpg"><img alt="_images/beach_direction.jpg" src="_images/beach_direction.jpg" style="width: 418.8px; height: 427.6px;" /></a>
-<p class="caption"><span class="caption-text">Definition of an angle between <span class="math notranslate nohighlight">\(x-\)</span> axis and beach-normal direction.</span><a class="headerlink" href="#beach-angle" title="Permalink to this image">¶</a></p>
-</div>
+<figure class="align-center" id="beach-angle">
+<a class="reference internal image-reference" href="_images/beach_direction.jpg"><img alt="_images/beach_direction.jpg" src="_images/beach_direction.jpg" style="width: 418.8px; height: 427.6px;" />
+</a>
+<figcaption>
+<p><span class="caption-text">Definition of an angle between <span class="math notranslate nohighlight">\(x-\)</span> axis and beach-normal direction.</span><a class="headerlink" href="#beach-angle" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
 <p>The bedload transport rates can be expressed as</p>
 <div class="math notranslate nohighlight">
 \[q_{bc} = \frac{b P_b}{g (s-1)} \sigma^3_T (1+ U_* V_*^2 +2 F_m \sin \theta) G_s\]</div>
@@ -265,22 +274,23 @@ Thus formula <a class="reference internal" href="#equation-qs">(10)</a> can be w
 </div></blockquote>
 <div class="math notranslate nohighlight">
 \[q_{bx} = q_{bc} \cos \alpha - q_{bl} \sin \alpha,  \ \ \ \ \ \  q_{by} = q_{bc} \sin \alpha + q_{bl} \cos \alpha\]</div>
-</div>
-<div class="section" id="seabed-evolution-equation">
-<h1>Seabed evolution equation<a class="headerlink" href="#seabed-evolution-equation" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="seabed-evolution-equation">
+<h1>Seabed evolution equation<a class="headerlink" href="#seabed-evolution-equation" title="Link to this heading">¶</a></h1>
 <p>The sea bed evolution equation can be described using sediment transport flux in generalized curvilinear coordinates:</p>
 <div class="math notranslate nohighlight" id="equation-bed">
-<span class="eqno">(11)<a class="headerlink" href="#equation-bed" title="Permalink to this equation">¶</a></span>\[(1-p) \frac{\partial h}{\partial t} + \frac{1}{J} \frac{\partial J f_{mor} q_\beta L^\alpha_\beta}{\partial \xi^\alpha} = 0\]</div>
+<span class="eqno">(11)<a class="headerlink" href="#equation-bed" title="Link to this equation">¶</a></span>\[(1-p) \frac{\partial h}{\partial t} + \frac{1}{J} \frac{\partial J f_{mor} q_\beta L^\alpha_\beta}{\partial \xi^\alpha} = 0\]</div>
 <p>where <span class="math notranslate nohighlight">\(p\)</span> is the bed porosity, <span class="math notranslate nohighlight">\(f_{mor}\)</span> represents a morphology factor. <a class="reference internal" href="#equation-bed">(11)</a> is solved using the same TVD scheme as in SHORECIRC.</p>
-</div>
+</section>
 
 
+            <div class="clearer"></div>
           </div>
         </div>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related" role="navigation" aria-label="Related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -295,12 +305,13 @@ Thus formula <a class="reference internal" href="#equation-qs">(10)</a> can be w
         <li class="nav-item nav-item-0"><a href="index.html">ESTCP  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="guide.html" ><strong>USER GUIDE</strong></a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="guide_nearcom.html" >NEARCOM USERS GUIDE</a> &#187;</li>
-          <li class="nav-item nav-item-3"><a href="guide_nea_basic.html" >NEARCOM BASICS</a> &#187;</li> 
+          <li class="nav-item nav-item-3"><a href="guide_nea_basic.html" >NEARCOM BASICS</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">SHORECIRC equations</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2022, ESTCP team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
+    &#169; Copyright 2022, ESTCP team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.4.7.
     </div>
   </body>
 </html>

@@ -1,18 +1,17 @@
-
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en" data-content_root="./">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <title>Output files &#8212; ESTCP  documentation</title>
-    <link rel="stylesheet" href="_static/lglb-sphinx-doc.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/language_data.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=649a27d8" />
+    <link rel="stylesheet" type="text/css" href="_static/lglb-sphinx-doc.css?v=89a288d6" />
+    <script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="TRAINING EXAMPLES" href="guide_fun_exam.html" />
@@ -24,7 +23,7 @@
  </a></p>
 </div>
 
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related" role="navigation" aria-label="Related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -39,13 +38,15 @@
         <li class="nav-item nav-item-0"><a href="index.html">ESTCP  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="guide.html" ><strong>USER GUIDE</strong></a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="guide_funwave.html" >FUNWAVE USERS GUIDE</a> &#187;</li>
-          <li class="nav-item nav-item-3"><a href="guide_fun_post.html" accesskey="U">POST-PROCESSING</a> &#187;</li> 
+          <li class="nav-item nav-item-3"><a href="guide_fun_post.html" accesskey="U">POST-PROCESSING</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Output files</a></li> 
       </ul>
     </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="index.html">Table of Contents</a></h3>
-  <ul>
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
 <li><a class="reference internal" href="#">Output files</a></li>
 <li><a class="reference internal" href="#central-module-output">CENTRAL module output</a></li>
 <li><a class="reference internal" href="#sediment-output">SEDIMENT output</a></li>
@@ -54,12 +55,17 @@
 <li><a class="reference internal" href="#binary-format">BINARY format</a></li>
 </ul>
 
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="guide_fun_post.html"
-                        title="previous chapter">POST-PROCESSING</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="guide_fun_exam.html"
-                        title="next chapter">TRAINING EXAMPLES</a></p>
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="guide_fun_post.html"
+                          title="previous chapter">POST-PROCESSING</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="guide_fun_exam.html"
+                          title="next chapter">TRAINING EXAMPLES</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -67,16 +73,16 @@
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
-<div id="searchbox" style="display: none" role="search">
+<search id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
 
@@ -85,12 +91,12 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="output-files">
-<h1>Output files<a class="headerlink" href="#output-files" title="Permalink to this headline">¶</a></h1>
+  <section id="output-files">
+<h1>Output files<a class="headerlink" href="#output-files" title="Link to this heading">¶</a></h1>
 <p>The output files are saved in the result directory defined by <code class="code docutils literal notranslate"><span class="pre">RESULT_FOLDER</span></code> in “input.txt”. Output file names are a combination of variable name and an output series number such as <code class="code docutils literal notranslate"><span class="pre">eta_00001,</span> <span class="pre">eta_00002,</span> <span class="pre">....</span></code>. The format and read/write algorithm are consistent with a depth file.</p>
-</div>
-<div class="section" id="central-module-output">
-<h1>CENTRAL module output<a class="headerlink" href="#central-module-output" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="central-module-output">
+<h1>CENTRAL module output<a class="headerlink" href="#central-module-output" title="Link to this heading">¶</a></h1>
 <blockquote>
 <div><ul class="simple">
 <li><p><code class="code docutils literal notranslate"><span class="pre">eta_xxxxx</span></code>: surface elevation</p></li>
@@ -114,9 +120,9 @@
 <li><p><code class="code docutils literal notranslate"><span class="pre">V_undertow_xxxxx</span></code>: roller-induced extra undertow flux in the y direction</p></li>
 </ul>
 </div></blockquote>
-</div>
-<div class="section" id="sediment-output">
-<h1>SEDIMENT output<a class="headerlink" href="#sediment-output" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="sediment-output">
+<h1>SEDIMENT output<a class="headerlink" href="#sediment-output" title="Link to this heading">¶</a></h1>
 <blockquote>
 <div><ul class="simple">
 <li><p><code class="code docutils literal notranslate"><span class="pre">C_xxxxx</span></code>: sediment concentration (g/l)</p></li>
@@ -129,9 +135,9 @@
 <li><p><code class="code docutils literal notranslate"><span class="pre">dep_xxxxx</span></code>:  depth</p></li>
 </ul>
 </div></blockquote>
-</div>
-<div class="section" id="station-files">
-<h1>Station files<a class="headerlink" href="#station-files" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="station-files">
+<h1>Station files<a class="headerlink" href="#station-files" title="Link to this heading">¶</a></h1>
 <p>To get time series of surface elevation, u and v at interested locations, you can specify a station file which includes the locations for output. Station input files (e.g., gauges.txt) have size (# of stations) x 2, where column 1 contains Mglob location (unit = grid points) and column 2 contains Nglob location (unit = grid points). In 1D cases, the Nglob location (second column) needs to be set to 1 for all gauges; if set to 0, station files will not be outputted.</p>
 <blockquote>
 <div><ul class="simple">
@@ -151,16 +157,16 @@ StationOutputBuffer = 100
 </pre></div>
 </div>
 </div></blockquote>
-</div>
-<div class="section" id="ascii-format">
-<h1>ASCII format<a class="headerlink" href="#ascii-format" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="ascii-format">
+<h1>ASCII format<a class="headerlink" href="#ascii-format" title="Link to this heading">¶</a></h1>
 <blockquote>
 <div><p>The default format is ASCII.  The format and read algorithm are  consistent with a depth file.</p>
 <p>A station file contains four columns, which are values of time (s), eta (m), u (m/s) and v (m/s), respectively.</p>
 </div></blockquote>
-</div>
-<div class="section" id="binary-format">
-<h1>BINARY format<a class="headerlink" href="#binary-format" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="binary-format">
+<h1>BINARY format<a class="headerlink" href="#binary-format" title="Link to this heading">¶</a></h1>
 <blockquote>
 <div><blockquote>
 <div><p>When <code class="code docutils literal notranslate"><span class="pre">FIELD_IO_TYPE</span> <span class="pre">=</span> <span class="pre">BINARY</span></code> is specified in “input.txt”, the 2D output files such as <code class="code docutils literal notranslate"><span class="pre">eta_00001,</span> <span class="pre">...</span></code> are in the binary format. Here’s an example of reading in:</p>
@@ -176,7 +182,7 @@ StationOutputBuffer = 100
 </div>
 <p>PYTHON:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">readBathyData</span><span class="p">(</span><span class="n">outputDir</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
-   <span class="sd">&quot;&quot;&quot;Function that reads in FUNWAVE&#39;s bathy data from: dep.out in output directory.&quot;&quot;&quot;</span>
+<span class="w">   </span><span class="sd">&quot;&quot;&quot;Function that reads in FUNWAVE&#39;s bathy data from: dep.out in output directory.&quot;&quot;&quot;</span>
 
    <span class="n">bathyFileName</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">outputDir</span><span class="p">,</span> <span class="s1">&#39;dep.out&#39;</span><span class="p">)</span>
 
@@ -195,8 +201,8 @@ StationOutputBuffer = 100
       <span class="n">bathy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fromfile</span><span class="p">(</span><span class="n">bathyFileName</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">Ny</span><span class="p">,</span><span class="n">Nx</span><span class="p">)</span>
 
       <span class="c1"># option 2</span>
-      <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">bathyFileName</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="nb">file</span><span class="p">:</span> <span class="c1"># &#39;rb&#39; is used to read binary in windows, on linux you can use &#39;r&#39;</span>
-      <span class="n">bathy_file</span> <span class="o">=</span> <span class="nb">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+      <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">bathyFileName</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span> <span class="c1"># &#39;rb&#39; is used to read binary in windows, on linux you can use &#39;r&#39;</span>
+      <span class="n">bathy_file</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
       <span class="n">bathy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">frombuffer</span><span class="p">(</span><span class="n">bathy_file</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
       <span class="n">bathy</span> <span class="o">=</span> <span class="n">bathy</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">Ny</span><span class="p">,</span> <span class="n">Nx</span><span class="p">)</span>
 
@@ -215,15 +221,16 @@ StationOutputBuffer = 100
 </div></blockquote>
 <p><strong>Station files do not have Binary format</strong>.</p>
 </div></blockquote>
-</div>
+</section>
 
 
+            <div class="clearer"></div>
           </div>
         </div>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related" role="navigation" aria-label="Related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -238,12 +245,13 @@ StationOutputBuffer = 100
         <li class="nav-item nav-item-0"><a href="index.html">ESTCP  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="guide.html" ><strong>USER GUIDE</strong></a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="guide_funwave.html" >FUNWAVE USERS GUIDE</a> &#187;</li>
-          <li class="nav-item nav-item-3"><a href="guide_fun_post.html" >POST-PROCESSING</a> &#187;</li> 
+          <li class="nav-item nav-item-3"><a href="guide_fun_post.html" >POST-PROCESSING</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Output files</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2022, ESTCP team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
+    &#169; Copyright 2022, ESTCP team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.4.7.
     </div>
   </body>
 </html>

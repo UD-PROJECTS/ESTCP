@@ -1,18 +1,16 @@
-
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en" data-content_root="./">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <title>ADCIRC &#8212; ESTCP  documentation</title>
-    <link rel="stylesheet" href="_static/lglb-sphinx-doc.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/language_data.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=649a27d8" />
+    <link rel="stylesheet" type="text/css" href="_static/lglb-sphinx-doc.css?v=89a288d6" />
+    <script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Delft3D" href="mod_delft3d.html" />
@@ -24,7 +22,7 @@
  </a></p>
 </div>
 
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related" role="navigation" aria-label="Related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -37,17 +35,22 @@
           <a href="mod_empirical.html" title="Empirical model"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">ESTCP  documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="models.html" accesskey="U"><strong>BASIC MODEL INFORMATION</strong></a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="models.html" accesskey="U"><strong>BASIC MODEL INFORMATION</strong></a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">ADCIRC</a></li> 
       </ul>
     </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
         <div class="sphinxsidebarwrapper">
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="mod_empirical.html"
-                        title="previous chapter">Empirical model</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="mod_delft3d.html"
-                        title="next chapter">Delft3D</a></p>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="mod_empirical.html"
+                          title="previous chapter">Empirical model</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="mod_delft3d.html"
+                          title="next chapter">Delft3D</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -55,16 +58,16 @@
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
-<div id="searchbox" style="display: none" role="search">
+<search id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
 
@@ -73,26 +76,29 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="adcirc">
-<h1>ADCIRC<a class="headerlink" href="#adcirc" title="Permalink to this headline">¶</a></h1>
-<div class="align-right figure align-center">
-<a class="reference internal image-reference" href="_images/adcirc_model.png"><img alt="alternate text" src="_images/adcirc_model.png" style="width: 500px; height: 250px;" /></a>
-</div>
+  <section id="adcirc">
+<h1>ADCIRC<a class="headerlink" href="#adcirc" title="Link to this heading">¶</a></h1>
+<figure class="align-right align-center">
+<a class="reference internal image-reference" href="_images/adcirc_model.png"><img alt="alternate text" src="_images/adcirc_model.png" style="width: 500px; height: 250px;" />
+</a>
+</figure>
 <p>The ADvanced CIRCulation (ADCIRC; Schematic showing the preliminary mesh (left) and model results of flooding (right) near NSN in southwest Virginia from ADCIRC) model uses the continuous-Galerkin finite element method to solve modified forms of the shallow water equations on unstructured meshes (Luettich and Westerink, 2004; Westerink et al., 2008). Water levels are calculated using the generalized wave continuity equation, which is a combined and differentiated form of the continuity and momentum equations (Kinnmark, 1986). Depth-averaged current velocities are calculated from the vertically integrated momentum equations. ADCIRC has achieved prominence in storm surge forecasting (Blanton et al., 2012; Fleming et al., 2007), hindcasting (Bunya et al., 2010; Thomas et al., 2019), evaluation and design of protection systems (Ebersole et al., 2007), and development of flood risk maps (FEMA, 2021). ADCIRC has been coupled with the Simulating WAves Nearshore (SWAN) model (Booij et al., 1999; Zijlema, 2010) to yield SWAN+ADCIRC (Dietrich et al., 2011b, 2012). SWAN+ADCIRC has been used operationally to forecast waves and coastal flooding during recent hurricane seasons, with guidance posted online (CERA; 2020; <a class="reference external" href="https://cera.coastalrisk.live">https://cera.coastalrisk.live</a>) and shared directly with managers (Rucker et al., 2021).</p>
-<div class="align-right figure align-center">
-<a class="reference internal image-reference" href="_images/adcirc_flow.png"><img alt="alternate text" src="_images/adcirc_flow.png" style="width: 400px; height: 250px;" /></a>
-</div>
+<figure class="align-right align-center">
+<a class="reference internal image-reference" href="_images/adcirc_flow.png"><img alt="alternate text" src="_images/adcirc_flow.png" style="width: 400px; height: 250px;" />
+</a>
+</figure>
 <p>ADCIRC uses unstructured meshes with resolution ranging from kilometers in open water, to hundreds of meters near the coastline and through floodplains, and to tens of meters in the small- scale natural and man-made channels that convey surge into inland regions. Early project activities have included the development of meshes focusing on southwest Virginia, with mesh resolution down to 60 m near NSN. Pre-processing of the meshes included selecting digital elevation model (DEM) tiles with higher resolutions near Norfolk while reducing the resolution into the Atlantic Ocean. Using the DEMs, a shapefile was developed to represent the coastline and floodplains of the mesh to focus only on southwest Virginia. With the minimum resolution staged across the domains, most of the elements are centered at the NSN. A minimum resolution of 1 km was used across the Mid-Atlantic region and 10 km over the remainder of the Atlantic Ocean. OceanMesh2D (Roberts et al., 2019) was used to generate these finite element meshes.</p>
 <p><a class="reference external" href="https://adcirc.org/home/documentation/users-manual-v53/">ADCIRC Online Users Manual</a></p>
-</div>
+</section>
 
 
+            <div class="clearer"></div>
           </div>
         </div>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related" role="navigation" aria-label="Related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -105,12 +111,13 @@
           <a href="mod_empirical.html" title="Empirical model"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">ESTCP  documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="models.html" ><strong>BASIC MODEL INFORMATION</strong></a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="models.html" ><strong>BASIC MODEL INFORMATION</strong></a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">ADCIRC</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2022, ESTCP team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
+    &#169; Copyright 2022, ESTCP team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.4.7.
     </div>
   </body>
 </html>

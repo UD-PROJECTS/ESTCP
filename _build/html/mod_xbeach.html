@@ -1,18 +1,16 @@
-
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en" data-content_root="./">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <title>XBEACH &#8212; ESTCP  documentation</title>
-    <link rel="stylesheet" href="_static/lglb-sphinx-doc.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/language_data.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=649a27d8" />
+    <link rel="stylesheet" type="text/css" href="_static/lglb-sphinx-doc.css?v=89a288d6" />
+    <script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="CSHORE" href="mod_cshore.html" />
@@ -24,7 +22,7 @@
  </a></p>
 </div>
 
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related" role="navigation" aria-label="Related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -37,17 +35,22 @@
           <a href="mod_nearcom.html" title="NearCoM"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">ESTCP  documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="models.html" accesskey="U"><strong>BASIC MODEL INFORMATION</strong></a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="models.html" accesskey="U"><strong>BASIC MODEL INFORMATION</strong></a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">XBEACH</a></li> 
       </ul>
     </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
         <div class="sphinxsidebarwrapper">
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="mod_nearcom.html"
-                        title="previous chapter">NearCoM</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="mod_cshore.html"
-                        title="next chapter">CSHORE</a></p>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="mod_nearcom.html"
+                          title="previous chapter">NearCoM</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="mod_cshore.html"
+                          title="next chapter">CSHORE</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -55,16 +58,16 @@
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
-<div id="searchbox" style="display: none" role="search">
+<search id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
 
@@ -73,22 +76,24 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="xbeach">
-<h1>XBEACH<a class="headerlink" href="#xbeach" title="Permalink to this headline">¶</a></h1>
-<div class="align-right figure align-center">
-<a class="reference internal image-reference" href="_images/xbeach.png"><img alt="alternate text" src="_images/xbeach.png" style="width: 400px; height: 300px;" /></a>
-</div>
+  <section id="xbeach">
+<h1>XBEACH<a class="headerlink" href="#xbeach" title="Link to this heading">¶</a></h1>
+<figure class="align-right align-center">
+<a class="reference internal image-reference" href="_images/xbeach.png"><img alt="alternate text" src="_images/xbeach.png" style="width: 400px; height: 300px;" />
+</a>
+</figure>
 <p>XBeach is an open-source, process-based, numerical model used to simulate hydrodynamics and morpho     dynamics over complex bathymetry (Roelvink et al., 2018, 2009). XBeach model skill has been demonstrated on sandy barrier islands (Van der Lugt et al. 2019,  Shambach et al. 2018, Lindemer et al., 2010; McCall et al., 2010), urbanized coasts (Nederhoff, 2014; Van Verseveld et al., 2015), and gravel beaches (McCall et al., 2015) among others. The hydrodynamic modules are capable of simulating short and long wave transformation, wave-induced setup, currents, and inundation. The morphodynamic modules are capable of simulating bed load transport, suspended load transport, bed level changes, and all four dune impact regimes as defined by Sallenger (2000). Coastal structures can be represented as “non-erodible” grid cells such that changes in elevation in those cells are not allowed to occur, and vegetation can be included by specifying vegetation type and location files. As such, XBeach is capable of simulating sea-swell wave transformation (refraction, shoaling and breaking), low-frequency wave (infragravity wave) transformation (generation, propagation and dissipation), wave-induced set-up and unsteady currents, as well as overwash and coastal flooding, also around      structures or on vegetated coasts.</p>
 <p>The 2D depth-averaged model can be executed in surfbeat mode (XBeach-SB) or      non-hydrostatic mode (XBeach-NH). Both modes resolve infragravity waves, which have been shown to be important in dune erosional processes (e.g. Roelvink et al., 2009). XBeach-SB resolves the short-wave envelope without phase information, thereby reducing resolution requirements and computation time requirements. The nonlinear shallow water wave equations are used to calculate low frequency and mean flows. A wave action balance equation, which is coupled with a roller energy balance equation, is used to determine radiation stress gradients. Sediment transport is modeled using a depth-averaged advection diffusion Van Rijn–Van Thiel de Vries equation where sediment entrainment and deposition is determined by the difference between the depth-averaged and equilibrium sediment concentrations (Van Thiel de Vries, 2009). Bed levels are updated according to gradients in sediment transport rates and an avalanching term to model dune slumping that uses critical bed slopes for wet and dry grid cells. XBeach-NH fully resolves the short waves by solving nonlinear shallow water equations and applying a non-hydrostatic pressure correction term. The non-hydrostatic pressure term is disabled when waves reach or exceed a certain steepness to simulate wave breaking. XBeach-NH is particularly useful on steep beaches, when wave asymmetry and skewness need to be resolved, or where diffraction is a dominant process. XBeach has been validated with a wide range of analytical, laboratory and field test cases using a standard set of parameter settings.</p>
-</div>
+</section>
 
 
+            <div class="clearer"></div>
           </div>
         </div>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related" role="navigation" aria-label="Related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -101,12 +106,13 @@
           <a href="mod_nearcom.html" title="NearCoM"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">ESTCP  documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="models.html" ><strong>BASIC MODEL INFORMATION</strong></a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="models.html" ><strong>BASIC MODEL INFORMATION</strong></a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">XBEACH</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2022, ESTCP team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
+    &#169; Copyright 2022, ESTCP team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.4.7.
     </div>
   </body>
 </html>
