@@ -6,7 +6,7 @@ User-interactive maps are created by Folim, which is an open-source python code 
 
 .. figure:: interactive_map/sample.png
    :width: 410px
-   :height: 350px
+   :height: 300px
    :align: right 
    :target: https://ud-projects.github.io/ESTCP/interactive_map/Flood_NF.html 
 
