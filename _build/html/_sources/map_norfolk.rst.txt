@@ -23,6 +23,7 @@ Nearcom Results (Wave effects)
 
 FUNWAVE-TVD Results (Wave effects)
 =========================================
+* `Wave surface at peak surge <../../interactive_map/Funwave/FUNWAVE_snap.html>`_
 * `Wave height <../../interactive_map/Funwave/FUNWAVE_hs.html>`_
 * `Wave setup <../../interactive_map/Funwave/FUNWAVE_setup.html>`_
 * `flooded area <../../interactive_map/Funwave/FUNWAVE_flood.html>`_
