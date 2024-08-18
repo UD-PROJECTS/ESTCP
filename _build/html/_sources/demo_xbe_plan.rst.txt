@@ -1,2 +1,0 @@
-XBEACH Demonstration (ONGOING)
-*************************************

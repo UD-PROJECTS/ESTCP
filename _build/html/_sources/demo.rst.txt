@@ -1,15 +1,11 @@
 .. _section-basics:
 
-**DEMONSTRATION (ONGOING)**
+**DEMONSTRATION**
 ============================
 
 .. toctree::
    :maxdepth: 2
 
-   demo_emperical
-   demo_funwave
-   demo_nearcom
-   demo_delft3d
-   demo_adcirc
-   demo_xbeach
-   demo_cshore
+   demo_norfolk
+   demo_tyndall
+   demo_roi_namur   

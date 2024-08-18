@@ -1,2 +1,0 @@
-CSHORE Demonstration (ONGOING)
-*************************************

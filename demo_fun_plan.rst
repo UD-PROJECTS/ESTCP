@@ -1,3 +1,0 @@
-FUNWAVE-TVD Demonstration (ONGOING)
-**************************************
-

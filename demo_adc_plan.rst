@@ -1,2 +1,0 @@
-ADCIRC Demonstration (ONGOING)
-***********************************
