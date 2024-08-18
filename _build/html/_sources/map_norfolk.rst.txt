@@ -1,12 +1,13 @@
 Norfolk
 ##########################
 
-Definiations of scenarios
-=========================================
+.. figure:: interactive_map/definition.png
+   :width: 410px
+   :align: right 
+   :target: https://ud-projects.github.io/ESTCP/interactive_map/Flood_NF.html 
 
-
-Inundation depth predicted by D-Flow
-=========================================
+Inundation depth predicted by D-Flow (Hurricane Irene)
+========================================================
 
 * `Baseline Scenario: Hurriance Irene (Holland Model) <../../interactive_map/Dflow_flood/Baseline.html>`_
 * `Scenarios: SLR effects <../../interactive_map/Dflow_flood/SLR.html>`_
