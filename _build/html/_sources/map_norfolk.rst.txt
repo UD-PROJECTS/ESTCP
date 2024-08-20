@@ -2,7 +2,7 @@ Norfolk
 ##########################
 
 .. figure:: interactive_map/definition.png
-   :width: 410px
+   :width: 480px
    :align: right 
    :target: https://ud-projects.github.io/ESTCP/interactive_map/Flood_NF.html 
 
