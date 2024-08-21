@@ -2,9 +2,28 @@ Norfolk
 ##########################
 
 .. figure:: interactive_map/definition.png
-   :width: 480px
+   :width: 560px
    :align: right 
-   :target: https://ud-projects.github.io/ESTCP/interactive_map/Flood_NF.html 
+
+.. figure:: interactive_map/irene_slr.png
+   :width: 240px
+   :align: right 
+   :target: https://ud-projects.github.io/ESTCP/interactive_map/Dflow_flood/SLR.html 
+
+.. figure:: interactive_map/nearcom_wave.png
+   :width: 240px
+   :align: right 
+   :target: https://ud-projects.github.io/ESTCP/interactive_map/Nearcom/Nearcom_Hs.html 
+
+.. figure:: interactive_map/nearcom_flow.png
+   :width: 240px
+   :align: right 
+   :target: https://ud-projects.github.io/ESTCP/interactive_map/Nearcom/Nearcom_Eta_uv.html 
+
+.. figure:: interactive_map/funwave_eta_slr.png
+   :width: 240px
+   :align: right 
+   :target: https://ud-projects.github.io/ESTCP/interactive_map/Funwave/FUNWAVE_snap.html 
 
 Inundation depth predicted by D-Flow
 ========================================================
