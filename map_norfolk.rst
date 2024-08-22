@@ -5,6 +5,11 @@ Norfolk
    :width: 560px
    :align: right 
 
+.. figure:: interactive_map/nsn_map.png
+   :width: 300px
+   :align: right 
+   :target: https://www.google.com/maps/@36.9020466,-76.2879158,10.46z?entry=ttu 
+
 .. figure:: interactive_map/irene_slr.png
    :width: 240px
    :align: right 
