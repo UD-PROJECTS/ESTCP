@@ -3,15 +3,9 @@
 **BASIC MODEL INFORMATION**
 ============================
 
-.. figure:: images/site/adcirc_grid_lgdm.png
-    :width: 550px
-    :align: center
-    :alt: alternate text
-    :figclass: align-right
 
 .. toctree::
    :maxdepth: 2
-
 
    mod_overview
    mod_empirical
@@ -21,3 +15,10 @@
    mod_nearcom
    mod_xbeach
    mod_cshore
+
+.. figure:: images/site/tyndell.png
+    :width: 550px
+    :align: center
+    :alt: alternate text
+    :figclass: align-right
+
