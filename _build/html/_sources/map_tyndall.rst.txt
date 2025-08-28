@@ -43,7 +43,7 @@ Inundation depth predicted by Nearcom
 * `Nearcom Scenarios: Effects of Shifting Track to West  <../../interactive_map/Tyndall_Nearcom/saved_maps/STW.html>`_ 
 
 
-Model result by ADCIRC
+Model results from ADCIRC
 ========================================================
 
 
@@ -51,14 +51,14 @@ Model result by ADCIRC
 * `Flood maps <../../interactive_map/Tyndall_ADCIRC/images/flood_map.png>`_
 
 
-Model result by XBEACH
+Model results from XBEACH
 ========================================================
 
 * `Model/data comparison of morphology change <../../interactive_map/Tyndall_xbeach/images/model_data_comparison.png>`_
 
 * `Examples of flood maps <../../interactive_map/Tyndall_xbeach/images/flood_maps.png>`_
 
-Model result by CSHORE
+Model results from CSHORE
 ========================================================
 
 * `Model/data comparisons of surface elevation and wave heights <../../interactive_map/Tyndall_cshore/images/model_data_comparison.png>`_
