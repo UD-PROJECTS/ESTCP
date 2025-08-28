@@ -17,8 +17,8 @@ ESTCP PROJECT:
    Different components of total water level.
 
 .. figure:: images/funwave_norfolk.png
-   :width: 400px
-   :height: 220px
+   :width: 350px
+   :height: 200px
    :align: right
    :target: animation.html
   
@@ -28,6 +28,11 @@ ESTCP PROJECT:
 .. figure:: images/models/holland.png
    :width: 400px
    :height: 250px
+   :align: right  
+
+.. figure:: images/models/cshore_xbeach.png
+   :width: 400px
+   :height: 200px
    :align: right  
 
 
